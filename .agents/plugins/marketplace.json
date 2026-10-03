@@ -1,0 +1,21 @@
+{
+  "name": "carbonchat-community",
+  "interface": {
+    "displayName": "CarbonChat"
+  },
+  "plugins": [
+    {
+      "name": "carbonchat",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JetXu-LLM/carbonchat-plugin.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

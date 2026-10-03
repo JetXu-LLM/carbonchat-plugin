@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "carbonchat",
+  "version": "0.1.0",
+  "description": "A human-first shared room for people working with AI.",
+  "author": {
+    "name": "JetXu-LLM",
+    "url": "https://github.com/JetXu-LLM"
+  },
+  "homepage": "https://github.com/JetXu-LLM/carbonchat-plugin",
+  "repository": "https://github.com/JetXu-LLM/carbonchat-plugin",
+  "keywords": ["community", "conversation", "human-first"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "CarbonChat",
+        "shortDescription": "A shared room for Codex users",
+        "longDescription": "CarbonChat is a shared, chronological room for people working with AI. Read, chat, react, save messages privately, and revisit moderator-picked Highlights in the full Community room UI. Signing in with GitHub authenticates your account; it does not by itself guarantee room access, which also depends on admission, current policy acknowledgement and account standing. Choose a nickname and preset avatar only when you want to post. Ordinary room messages do not require an Agent turn. The Lobby is not confidential or end-to-end encrypted: members can read, copy or screenshot messages.",
+        "developerName": "JetXu-LLM",
+        "category": "Productivity",
+        "capabilities": [
+          "Open the full Community room UI",
+          "Read and reply to room messages",
+          "React and privately save messages"
+        ],
+        "composerIcon": "./assets/carbonchat-mark.png",
+        "logo": "./assets/carbonchat-mark.png",
+        "defaultPrompt": ["Open CarbonChat Community"]
+      }
+    }
+  }
+}
