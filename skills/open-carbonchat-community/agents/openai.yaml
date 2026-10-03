@@ -1,0 +1,11 @@
+interface:
+  display_name: "CarbonChat Community"
+  short_description: "Open the CarbonChat Community room"
+  default_prompt: "Open CarbonChat Community"
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "carbonchat"
+      description: "Open the CarbonChat Community room when the user explicitly asks to open or launch CarbonChat Community or The Lobby."
+      transport: "streamable_http"
+      url: "https://carbonchat.codexforwork.com/mcp"

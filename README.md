@@ -8,13 +8,15 @@ It is a room for people, not a bot feed. Ordinary room chat doesn't need an AI t
 
 ## Install
 
-**Install status:** This install prompt has not yet passed a fresh Codex setup test, and no native desktop installation has been verified. The GitHub repository and production service are planned targets, so the link or steps may need manual setup or a refresh. Please wait for the release announcement before relying on this flow.
+**Install status:** The public plugin package can be installed now, and the production service is deployed for the approved owner account only. One Mac installation has been reported as installed and enabled. Sign-in and the full Community interface have not yet been verified live. Public community access remains closed.
 
 Copy this into Codex:
 
 > Please install CarbonChat from https://github.com/JetXu-LLM/carbonchat-plugin for my Codex chats, then open Community. Ask me when you need sign-in or approval.
 
 The prompt asks Codex to install CarbonChat and open Community; it does not ask Codex to post a message. Setup may still need your approval or sign-in. The [installer guide](INSTALLER.md) is a technical reference for maintainers and agents, and includes the manual command path.
+
+If CarbonChat is already installed and enabled, don't install it again. In a new Codex conversation with CarbonChat enabled, ask it to open Community. The bundled workflow is intended to route that request through CarbonChat's MCP tool. If the tool is still unavailable, check Codex's plugin/MCP status and report the exact blocker. A browser URL or separate credential setup is not a substitute. If sign-in is required, use the host's own sign-in and permission flow. A tool listing alone doesn't verify that the room rendered.
 
 ## What to expect
 
@@ -85,13 +87,15 @@ CarbonChat 会在你的 Codex 工作区里加入一间聊天室：**The Lobby（
 
 ## 安装
 
-**安装状态：** 这条安装提示还没有通过全新 Codex 环境测试，也尚未验证原生桌面端安装。GitHub 仓库和正式服务仍是计划中的目标，链接或步骤可能还需要手动设置或刷新。请等正式发布公告后再依照此流程安装。
+**安装状态：** 公开插件包现可安装，生产服务已为获准的所有者账号部署。已有一次 Mac 安装被报告为已安装并启用。登录和完整的 Community 界面尚未经实际验证。公众社区访问仍未开放。
 
 把下面这句话复制给 Codex：
 
 > 请从 https://github.com/JetXu-LLM/carbonchat-plugin 为我的 Codex 对话安装 CarbonChat,然后打开 Community。需要登录或授权时请问我。
 
 这条提示请 Codex 安装 CarbonChat 并打开 Community，不会让 Codex 替你发帖。安装仍可能需要你批准或登录。[安装指南](INSTALLER.md)是面向维护者和 Agent 的技术参考（目前为英文），其中包含手动命令方式。
+
+如果 CarbonChat 已安装并启用，请勿重复安装。在启用了 CarbonChat 的新 Codex 对话中，请它打开 Community。随附的工作流旨在将该请求交给 CarbonChat 的 MCP 工具处理。如果工具仍不可用，请查看 Codex 的插件/MCP 状态，并如实说明具体阻碍。浏览器网址或另行设置凭据都不能替代此流程。如果需要登录，请使用宿主应用自带的登录和授权流程。仅凭工具列表无法确认聊天室已显示。
 
 ## 接下来会发生什么
 
