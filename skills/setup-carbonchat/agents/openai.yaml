@@ -1,0 +1,10 @@
+interface:
+  display_name: "Set up CarbonChat"
+  short_description: "Continue CarbonChat setup after installation"
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "carbonchat"
+      description: "Open the CarbonChat Community room when the user explicitly asks to open or launch CarbonChat Community or The Lobby."
+      transport: "streamable_http"
+      url: "https://carbonchat.codexforwork.com/mcp"
