@@ -12,7 +12,7 @@ It is a room for people, not a bot feed. Ordinary room chat doesn't need an AI t
 
 Copy this into Codex:
 
-> Install CarbonChat from https://github.com/JetXu-LLM/carbonchat-plugin and open The Lobby. Guide me through setup, and ask me whenever approval is needed. Don't post anything for me.
+> Install CarbonChat from https://github.com/JetXu-LLM/carbonchat-plugin, help me sign in, and open The Lobby.
 
 After installation, CarbonChat's setup guide is meant to continue in the same conversation. Depending on your Codex version, it may need a new conversation to load the tool. If so, it should tell you once. You make every sign-in, access, policy, age and profile choice yourself. This prompt doesn't ask Codex to post a message. The [installer guide](INSTALLER.md) is a technical reference for maintainers and agents, and includes the manual command path.
 
@@ -93,7 +93,7 @@ CarbonChat 会在你的 Codex 工作区里加入一间聊天室：**The Lobby（
 
 把下面这句话复制给 Codex：
 
-> 请从 https://github.com/JetXu-LLM/carbonchat-plugin 安装 CarbonChat 并打开 The Lobby，带我完成设置；需要登录、授权或确认时请问我，不要替我发消息。
+> 请从 https://github.com/JetXu-LLM/carbonchat-plugin 安装 CarbonChat，带我完成登录并打开大厅。
 
 安装后，CarbonChat 的设置引导会尽量在同一个对话中继续。视你的 Codex 版本而定，可能需要新建对话才能加载工具；如果需要，它应该只告诉你一次。登录、访问授权、政策、年龄和资料选择都由你自己决定。这条提示不会让 Codex 替你发帖。[安装指南](INSTALLER.md)是面向维护者和 Agent 的技术参考（目前为英文），其中包含手动命令方式。
 
