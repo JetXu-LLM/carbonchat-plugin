@@ -69,7 +69,15 @@ No. CarbonChat is installed from this GitHub repository, which is our own plugin
 Plugin details, an icon and install guidance. The backend is private.
 
 **Something didn't work.**  
-Ask Codex to show you the last step it tried and the error. General messages can be sent to support@carbonchat.codexforwork.com. It receives mail by forwarding, and no response time is promised. Don't include secrets or private project details.
+Ask Codex to show you the last step it tried and the error, then [report a bug](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=1-bug-report.yml). Remove any private information before sharing.
+
+## Feedback
+
+[Report a bug](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=1-bug-report.yml) or [suggest a feature](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=2-feature-idea.yml). English and Chinese are welcome. Please check [existing issues](https://github.com/JetXu-LLM/carbonchat-plugin/issues) first.
+
+GitHub issues are public. Don't include passwords, tokens, OAuth sign-in or callback URLs, private chats, or personal data. Remove these from screenshots too.
+
+For security concerns or general questions, email [support@carbonchat.codexforwork.com](mailto:support@carbonchat.codexforwork.com). Don't send passwords or tokens. Mail is received by forwarding; no response time is promised.
 
 ## About
 
@@ -148,7 +156,15 @@ Agent 协助准备的发帖草稿仅对你的 CarbonChat 账号开放。用于�
 插件信息、图标和安装说明。后端代码不公开。
 
 **装不上怎么办？**  
-让 Codex 告诉你最后执行的一步和报错。一般咨询可发送至 support@carbonchat.codexforwork.com。该地址通过转发接收邮件，不承诺响应时间。请不要附上密钥或私有项目细节。
+让 Codex 告诉你最后执行的一步和报错，再[反馈问题](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=1-bug-report.yml)。分享前请移除私人信息。
+
+## 反馈
+
+你可以[反馈问题](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=1-bug-report.yml)，也可以[提出功能建议](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=2-feature-idea.yml)。中英文都欢迎，提交前请先看看[已有议题](https://github.com/JetXu-LLM/carbonchat-plugin/issues)。
+
+GitHub 议题是公开的。请勿附上密码、令牌、OAuth 登录或回调链接、私人聊天或个人资料；截图中也请移除这些内容。
+
+安全问题或一般咨询请发邮件至 [support@carbonchat.codexforwork.com](mailto:support@carbonchat.codexforwork.com)，请勿发送密码或令牌。该地址通过转发接收邮件，不承诺响应时间。
 
 ## 关于
 

@@ -1,0 +1,46 @@
+name: Report a bug
+description: Something in CarbonChat isn't working as expected.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Chinese is welcome. Please check [existing issues](https://github.com/JetXu-LLM/carbonchat-plugin/issues) first.
+
+        This report will be public. Don't include passwords, tokens, OAuth sign-in or callback URLs, private chats, or personal data, including in screenshots. For a security concern, email [support@carbonchat.codexforwork.com](mailto:support@carbonchat.codexforwork.com) instead of posting details here. Never send passwords or tokens.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Tell us what you saw and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How did it happen?
+      description: List the steps that led to the problem. If it happened only once or you aren't sure how to repeat it, say so.
+      placeholder: |
+        1. I opened...
+        2. I tried...
+        3. I saw...
+    validations:
+      required: true
+  - type: dropdown
+    id: client
+    attributes:
+      label: Where were you using CarbonChat?
+      options:
+        - Web browser
+        - macOS desktop app
+        - Windows desktop app
+        - CLI
+        - Other / not sure
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Anything else? (optional)
+      description: Your app or plugin version, browser name, or a screenshot may help. Share only what you know, and remove private information before attaching anything.
+    validations:
+      required: false

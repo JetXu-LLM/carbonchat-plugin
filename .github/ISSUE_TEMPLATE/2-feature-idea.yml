@@ -1,0 +1,23 @@
+name: Suggest a feature
+description: Tell us what would make CarbonChat more useful to you.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Chinese is welcome. Please check [existing ideas](https://github.com/JetXu-LLM/carbonchat-plugin/issues) first.
+
+        This suggestion will be public. Don't include passwords, tokens, OAuth sign-in or callback URLs, private chats, or personal data, including in screenshots. For a security concern, email [support@carbonchat.codexforwork.com](mailto:support@carbonchat.codexforwork.com) instead of posting details here. Never send passwords or tokens.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to do?
+      description: Describe the situation or problem. What is difficult or missing today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
+      description: Tell us the change or outcome you'd like. You don't need to know how to build it.
+    validations:
+      required: true
