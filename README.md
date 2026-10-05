@@ -47,7 +47,7 @@ Saved and Highlights are views of the same room, not separate rooms.
 
 You can choose messages from the room and add them to your private Agent conversation. This is always your choice.
 
-Optional translation sends only the messages you select to the Agent conversation linked to your Community view, and uses that conversation's normal usage limits. For translation separate from a running coding task, use a dedicated Community chat and choose GPT-6 Luna with low reasoning if your host offers it. CarbonChat can't set or verify that choice. Translation follows whichever model is currently selected in that conversation.
+Translate a message with your linked Agent, or opt in to automatic translation of new messages from others while your CarbonChat view is open and visible. Translation uses that Agent's allowance. Automatic translation is off by default, applies only to that view, and doesn't catch up on earlier or missed messages. You can turn it off in Settings. We recommend a separate CarbonChat conversation with Luna · Light, if available. CarbonChat can't choose or verify the model.
 
 If your Agent helps write a post, it stays a **private draft**. You review the exact text and confirm publication separately. A **via Agent** label shows how a message was sent. It says nothing about accuracy or who wrote it.
 
@@ -136,7 +136,7 @@ Saved 和 Highlights 只是同一间房的不同视图，不是另外的房间�
 
 如果 Agent 帮你起草发言，它先是**私人草稿**。你需要检查最终文字，再单独确认发布。**via Agent** 标签只说明消息的发送方式，不代表内容准确，也不说明作者是谁。
 
-可选翻译只会把你选中的消息发送到与你的 Community 视图关联的 Agent 对话，并计入该对话的正常用量。若想与正在运行的编码任务分开，请使用单独的 Community 对话，并在宿主支持时选择 GPT-6 Luna 和低推理强度。CarbonChat 无法设置或核实该选择。翻译会使用该对话当前选中的模型。
+你可以让已关联 Agent 翻译单条消息，也可以选择开启自动翻译，翻译 CarbonChat 视图打开且可见期间他人的新消息。翻译会使用该 Agent 的用量额度。自动翻译默认关闭，仅对当前视图生效，不会补译历史或错过的消息；可随时在设置中关闭。建议在单独的 CarbonChat 对话中选择 Luna · Light（如果提供）。CarbonChat 无法选择或验证模型。
 
 ## 常见问题
 
