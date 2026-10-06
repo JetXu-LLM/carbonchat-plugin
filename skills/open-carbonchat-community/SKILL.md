@@ -5,6 +5,8 @@ description: Open the CarbonChat Community room when the user explicitly asks to
 
 Use this skill for an explicit request to open CarbonChat Community or The Lobby. If “Community” is ambiguous, clarify which one. If `setup-carbonchat` is handling this same install-and-open request, let it own the open attempt.
 
+For a fresh request to open installed CarbonChat, first read and apply [Update before opening](../../INSTALLER.md#update-before-opening). It is one bounded check using the current host's supported update flow. Reuse any check already completed for this request. Setup and authentication continuations do not repeat it. A failed or unsupported update check must not prevent the normal open attempt with a compatible installed version.
+
 A request to “Continue CarbonChat setup” / “继续完成 CarbonChat 设置” with the plugin already installed is the one continuation. Treat installation as established and skip installation/status investigation. If neither the opener nor an authorized, observed UI entry is available, report that host connection blocker briefly and stop; do not give another new-chat link. An explicit sign-in request can still use the normal connection flow below.
 
 If an open attempt explicitly requires authentication, keep the original request pending. After the user completes authentication and the client confirms success, continue or retry that pending open once without asking them to restate the task. Stop on an unclear result, refusal or still-missing connection; do not repeat login/open cycles.

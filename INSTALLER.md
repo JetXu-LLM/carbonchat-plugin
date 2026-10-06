@@ -37,6 +37,15 @@ Use these steps when the user asks to install CarbonChat and open The Lobby. Kee
 
 For later visits, the user can click the CarbonChat sidebar entry when it is visible. The Global entry opens outside a coding conversation; the Thread/Community entry opens in that conversation's side panel. Neither is a reason to change or steer a running task.
 
+## Update before opening
+
+For a fresh request to open installed CarbonChat, the open skill owns one bounded package-update check before the normal open attempt. Reuse any check or update already performed for that request. A setup or authentication continuation is the same request, not a reason to check again.
+
+1. Use the host's supported plugin-update check when available. Compare the installed CarbonChat package with the version advertised by its already configured CarbonChat source. Check only that source and package; do not add or replace a marketplace or update unrelated plugins. Do not treat a backend or room-interface release as proof that the plugin package needs updating.
+2. If a newer package is available and the host supports updating it, use that normal update flow. For a CLI, inspect its current command help once unless that support is already known for this client. Use `codex plugin marketplace upgrade carbonchat-community` only when the CLI supports it and the existing configured marketplace is this repository and has been verified to contain only CarbonChat. If that scope cannot be verified, skip the command. If an update was run, verify the installed package version once with the supported plugin-status command, such as `codex plugin list --marketplace carbonchat-community --json`. Do not claim success from the update request alone.
+3. Respect the host's approvals, sign-in, MFA and permission choices. Do not grant new access, handle credentials, change models, manually uninstall or reinstall, edit configuration or execute downloaded scripts. If the host requires a fresh conversation to load the bundle, use the existing one-continuation flow; never send into or restart a running coding task.
+4. If checking or updating is unsupported, unavailable, refused or fails, continue the normal open flow with the installed compatible version. A refusal of the update alone does not block a separately permitted open. Stop if the host or room actually denies opening, or if the installed version is explicitly incompatible; do not bypass either. Do not repeat upgrades, add a background update poll or heartbeat or make the user restate the open request.
+
 ## Connection exceptions
 
 When the opener is absent, reuse any supported MCP status already available. For the initial request, inspect it once only if an authentication check is needed; a continuation request is not a reason to repeat the investigation. Explicit “not logged in” or “authentication required” supports the sign-in step above; `unknown` does not. Keep the observed CLI state separate from the desktop or cloud task's connection state. If one new chat still lacks the tool, report that specific host connection blocker and stop. Do not infer a service admission decision from missing tools.
