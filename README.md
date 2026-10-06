@@ -8,24 +8,22 @@ It is a room for people, not a bot feed. Ordinary room chat doesn't need an AI t
 
 ## Install
 
-**Install status:** The CarbonChat plugin package can be installed. Community access is still closed to the public. So far, only the approved owner account has been checked on the live service. It hasn't been tested with new public users or on Windows.
-
 Copy this into Codex:
 
-> Install CarbonChat from https://github.com/JetXu-LLM/carbonchat-plugin and open The Lobby. Guide me through setup, and ask me whenever approval is needed. Don't post anything for me.
+> Install CarbonChat from https://github.com/JetXu-LLM/carbonchat-plugin, help me sign in, and open The Lobby.
 
-After installation, CarbonChat's setup guide is meant to continue in the same conversation. Depending on your Codex version, it may need a new conversation to load the tool. If so, it should tell you once. You make every sign-in, access, policy, age and profile choice yourself. This prompt doesn't ask Codex to post a message. The [installer guide](INSTALLER.md) is a technical reference for maintainers and agents, and includes the manual command path.
+Codex installs CarbonChat if needed, then tries to open The Lobby. If setup needs a new chat, [continue setup here](codex://new?prompt=%5B%40CarbonChat%5D%28plugin%3A%2F%2Fcarbonchat%40carbonchat-community%29%20Continue%20CarbonChat%20setup.%20It%20is%20already%20installed%3B%20open%20The%20Lobby.) and press **Send**. The link prefills a request to the installed plugin; it does not send it for you. You don't need to install CarbonChat again.
 
-If CarbonChat is already installed and enabled, don't install it again. To reopen The Lobby without adding a prompt to a coding task in progress, click CarbonChat's Global entry in the app's navigation. For a task-specific Community view, open it from a dedicated conversation. If Codex hasn't loaded CarbonChat yet, use its supported refresh or reopen step once. Don't repeat install or new-chat loops. A tool listing alone doesn't verify that the room rendered.
+For later visits, use the CarbonChat entry in the app's sidebar when it is visible. This opens the room without adding a prompt to a coding task. The [installer guide](INSTALLER.md) contains the Agent steps.
 
 ## What to expect
 
-1. Codex installs CarbonChat from this repository if needed, and may ask you to approve the installation. If your Codex version needs a new conversation to load CarbonChat, it should tell you once.
-2. Codex tries to open The Lobby. If sign-in is needed, sign in with GitHub, then review CarbonChat's separate access request. Each is your choice.
-3. Room admission is checked separately. If asked, read and decide whether to accept the current Participation Terms and Community Rules, confirm you've read the Privacy Notice, and confirm you're 18 or older.
-4. You can read without setting a profile. Before posting, choose your own nickname and preset avatar. The screen previews how room members will see them.
+1. Approve installation if Codex asks. If CarbonChat is already installed, setup continues from there.
+2. Complete GitHub sign-in and review CarbonChat's access request when prompted. The service checks whether your account can enter the room.
+3. Review any Participation Terms, Community Rules, Privacy Notice and age confirmation yourself.
+4. You can read without setting a profile. Before posting, choose your nickname and preset avatar in the room.
 
-Codex should wait for your approvals and profile choices. Setup isn't meant to post anything for you.
+Setup does not post messages. If an Agent later helps draft one, you review the exact text and confirm publication separately.
 
 ## Inside The Lobby
 
@@ -49,7 +47,7 @@ Saved and Highlights are views of the same room, not separate rooms.
 
 You can choose messages from the room and add them to your private Agent conversation. This is always your choice.
 
-Optional translation sends only the messages you select to the Agent conversation linked to your Community view, and uses that conversation's normal usage limits. For translation separate from a running coding task, use a dedicated Community chat and choose GPT-6 Luna with low reasoning if your host offers it. CarbonChat can't set or verify that choice. Translation follows whichever model is currently selected in that conversation.
+Translate a message with your linked Agent, or opt in to automatic translation of new messages from others while your CarbonChat view is open and visible. Translation uses that Agent's allowance. Automatic translation is off by default, applies only to that view, and doesn't catch up on earlier or missed messages. You can turn it off in Settings. We recommend a separate CarbonChat conversation with Luna · Light, if available. CarbonChat can't choose or verify the model.
 
 If your Agent helps write a post, it stays a **private draft**. You review the exact text and confirm publication separately. A **via Agent** label shows how a message was sent. It says nothing about accuracy or who wrote it.
 
@@ -71,7 +69,15 @@ No. CarbonChat is installed from this GitHub repository, which is our own plugin
 Plugin details, an icon and install guidance. The backend is private.
 
 **Something didn't work.**  
-Ask Codex to show you the last step it tried and the error. General messages can be sent to support@carbonchat.codexforwork.com. It receives mail by forwarding, and no response time is promised. Don't include secrets or private project details.
+Ask Codex to show you the last step it tried and the error, then [report a bug](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=1-bug-report.yml). Remove any private information before sharing.
+
+## Feedback
+
+[Report a bug](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=1-bug-report.yml) or [suggest a feature](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=2-feature-idea.yml). English and Chinese are welcome. Please check [existing issues](https://github.com/JetXu-LLM/carbonchat-plugin/issues) first.
+
+GitHub issues are public. Don't include passwords, tokens, OAuth sign-in or callback URLs, private chats, or personal data. Remove these from screenshots too.
+
+For security concerns or general questions, email [support@carbonchat.codexforwork.com](mailto:support@carbonchat.codexforwork.com). Don't send passwords or tokens. Mail is received by forwarding; no response time is promised.
 
 ## About
 
@@ -89,24 +95,22 @@ CarbonChat 会在你的 Codex 工作区里加入一间聊天室：**The Lobby（
 
 ## 安装
 
-**安装状态：** CarbonChat 插件包可以安装。社区目前仍未向公众开放。到目前为止，只有获准的所有者账号在线上服务中接受过检查。尚未使用新的公众用户或在 Windows 上测试。
-
 把下面这句话复制给 Codex：
 
-> 请从 https://github.com/JetXu-LLM/carbonchat-plugin 安装 CarbonChat 并打开 The Lobby，带我完成设置；需要登录、授权或确认时请问我，不要替我发消息。
+> 请从 https://github.com/JetXu-LLM/carbonchat-plugin 安装 CarbonChat，带我完成登录并打开大厅。
 
-安装后，CarbonChat 的设置引导会尽量在同一个对话中继续。视你的 Codex 版本而定，可能需要新建对话才能加载工具；如果需要，它应该只告诉你一次。登录、访问授权、政策、年龄和资料选择都由你自己决定。这条提示不会让 Codex 替你发帖。[安装指南](INSTALLER.md)是面向维护者和 Agent 的技术参考（目前为英文），其中包含手动命令方式。
+Codex 会在需要时安装 CarbonChat，然后尝试打开大厅。如果设置需要新对话，请[点这里继续设置](codex://new?prompt=%5B%40CarbonChat%5D%28plugin%3A%2F%2Fcarbonchat%40carbonchat-community%29%20%E7%BB%A7%E7%BB%AD%E5%AE%8C%E6%88%90%20CarbonChat%20%E8%AE%BE%E7%BD%AE%EF%BC%9A%E6%8F%92%E4%BB%B6%E5%B7%B2%E5%AE%89%E8%A3%85%EF%BC%8C%E8%AF%B7%E6%89%93%E5%BC%80%E5%A4%A7%E5%8E%85%E3%80%82)，再点击**发送**。链接会预填打开已安装插件的请求，不会自动发送，也不需要重新安装 CarbonChat。
 
-如果 CarbonChat 已安装并启用，请勿重复安装。想重新打开 The Lobby，又不想在进行中的编码任务里加入提示，请点击应用导航中的 CarbonChat Global 入口。若想要针对某项任务的 Community 视图，请在单独的对话中打开。如果 Codex 尚未加载 CarbonChat，请按它支持的方式刷新或重新打开一次。不要反复安装或循环新建对话。仅凭工具列表无法确认聊天室已显示。
+以后再来时，如果应用侧栏中已有 CarbonChat 入口，可以直接点击，不必在编码任务里添加提示。[安装指南](INSTALLER.md)包含 Agent 操作步骤。
 
 ## 接下来会发生什么
 
-1. 如有需要，Codex 会从本仓库安装 CarbonChat，并可能请你批准安装。如果你的 Codex 版本需要新建对话才能加载 CarbonChat，它应该告诉你一次。
-2. Codex 会尝试打开 The Lobby。如果需要登录，请使用 GitHub 登录，然后单独审阅 CarbonChat 的访问请求；每一步都由你决定。
-3. 房间准入会单独检查。如果系统要求，请阅读并决定是否接受当前《参与条款》和《社区规则》、确认已阅读《隐私说明》，并确认你已年满 18 周岁。
-4. 不设置资料也可以阅读。发言前，请自行选择昵称和预设头像。界面会预览房间成员看到的样子。
+1. 如果 Codex 请求批准安装，由你确认；已安装时会直接继续设置。
+2. 界面提示时，完成 GitHub 登录并审阅 CarbonChat 的访问请求。服务会检查你的账号是否可以进入大厅。
+3. 如需确认《参与条款》《社区规则》《隐私说明》或年龄，请由你本人阅读并选择。
+4. 不设置资料也可以阅读。发言前，在大厅里自行选择昵称和预设头像。
 
-Codex 应等待你完成必要的批准和资料选择；设置过程不应替你发帖。
+设置过程不会替你发消息。以后若由 Agent 帮忙起草，你需要检查最终文字，再单独确认发布。
 
 ## 大厅里有什么
 
@@ -132,7 +136,7 @@ Saved 和 Highlights 只是同一间房的不同视图，不是另外的房间�
 
 如果 Agent 帮你起草发言，它先是**私人草稿**。你需要检查最终文字，再单独确认发布。**via Agent** 标签只说明消息的发送方式，不代表内容准确，也不说明作者是谁。
 
-可选翻译只会把你选中的消息发送到与你的 Community 视图关联的 Agent 对话，并计入该对话的正常用量。若想与正在运行的编码任务分开，请使用单独的 Community 对话，并在宿主支持时选择 GPT-6 Luna 和低推理强度。CarbonChat 无法设置或核实该选择。翻译会使用该对话当前选中的模型。
+你可以让已关联 Agent 翻译单条消息，也可以选择开启自动翻译，翻译 CarbonChat 视图打开且可见期间他人的新消息。翻译会使用该 Agent 的用量额度。自动翻译默认关闭，仅对当前视图生效，不会补译历史或错过的消息；可随时在设置中关闭。建议在单独的 CarbonChat 对话中选择 Luna · Light（如果提供）。CarbonChat 无法选择或验证模型。
 
 ## 常见问题
 
@@ -152,7 +156,15 @@ Agent 协助准备的发帖草稿仅对你的 CarbonChat 账号开放。用于�
 插件信息、图标和安装说明。后端代码不公开。
 
 **装不上怎么办？**  
-让 Codex 告诉你最后执行的一步和报错。一般咨询可发送至 support@carbonchat.codexforwork.com。该地址通过转发接收邮件，不承诺响应时间。请不要附上密钥或私有项目细节。
+让 Codex 告诉你最后执行的一步和报错，再[反馈问题](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=1-bug-report.yml)。分享前请移除私人信息。
+
+## 反馈
+
+你可以[反馈问题](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=1-bug-report.yml)，也可以[提出功能建议](https://github.com/JetXu-LLM/carbonchat-plugin/issues/new?template=2-feature-idea.yml)。中英文都欢迎，提交前请先看看[已有议题](https://github.com/JetXu-LLM/carbonchat-plugin/issues)。
+
+GitHub 议题是公开的。请勿附上密码、令牌、OAuth 登录或回调链接、私人聊天或个人资料；截图中也请移除这些内容。
+
+安全问题或一般咨询请发邮件至 [support@carbonchat.codexforwork.com](mailto:support@carbonchat.codexforwork.com)，请勿发送密码或令牌。该地址通过转发接收邮件，不承诺响应时间。
 
 ## 关于
 
