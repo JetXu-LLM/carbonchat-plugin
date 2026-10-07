@@ -4,7 +4,11 @@ Dated observations for maintenance. These records are not extra installation ste
 
 ## Updating an existing installation
 
-This revision updates bundled skills and has package version **0.1.3**. After it is released on `main`, use `codex plugin marketplace upgrade carbonchat-community` once, then check `codex plugin list --marketplace carbonchat-community --json` once for the new version. Start one new chat to load the updated bundle. If the cache still reports 0.1.2, stop and report that the update did not reach it; do not uninstall/reinstall or repeat upgrades. A Draft PR is not a published update. Update only within the user's authorized request.
+This revision updates the bundled opening instructions and has package version **0.1.4**. After it is released on `main`, use the [bounded update-before-open flow](INSTALLER.md#update-before-opening) with the client's supported update command and one version verification. A Draft PR is not a published update. If the client still reports the previous version, report that the update did not reach it; do not uninstall/reinstall or repeat upgrades.
+
+An already cached older skill does not acquire these new instructions merely because this repository changes. It needs one host-supported bundle refresh. Compatible backend and room-interface changes are separate from the package version and are intended to keep working with older supported packages. Starting a fresh conversation may be necessary to load updated skills; do not promise in-place hot loading or universal update support.
+
+Current source reference (October 6, 2026): the official [CLI command definition](https://github.com/openai/codex/blob/73178e7ca60fe8655c49727e60a467d7c03f896c/codex-rs/cli/src/marketplace_cmd.rs) supports a named marketplace upgrade, while [the upgrade implementation](https://github.com/openai/codex/blob/73178e7ca60fe8655c49727e60a467d7c03f896c/codex-rs/core-plugins/src/manager.rs) refreshes installed plugin caches for upgraded marketplace roots. Scope must still be verified on the client; never omit the marketplace name or assume that a similarly named source contains only CarbonChat. This is source evidence, not a live update test.
 
 ## Host contract and dated evidence
 
