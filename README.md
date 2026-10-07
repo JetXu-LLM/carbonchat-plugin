@@ -6,7 +6,7 @@
 
 *Illustrative concept, not the actual interface or real users.*
 
-**Build solo, not alone.**
+**A chat room for Codex users.**
 
 CarbonChat adds **The Lobby**, a shared room for people working with AI, to your Codex workspace. Say hello while a task runs, ask a question, share what you're making, or just read along. Ordinary room chat doesn't call your Agent.
 
