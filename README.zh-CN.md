@@ -6,28 +6,30 @@
 
 *概念示意图，并非实际界面或真实用户。*
 
-**独自做项目，也能有人聊聊。**
+**Codex 用户的真人聊天室**
 
 CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（大厅）**。任务运行时，打个招呼、问个问题、聊聊正在做的东西，或者只看不说，都欢迎。普通聊天不调用你的 Agent。
 
 ## 进来坐坐
 
-把这句话复制给 Codex，代码块右上角可以一键复制：
+无论是否安装过，把同一句话复制给 Codex，代码块右上角可以一键复制：
 
 ```text
-请从 https://github.com/JetXu-LLM/carbonchat-plugin 安装 CarbonChat，带我完成登录并打开大厅。
+请帮我打开 CarbonChat Lobby：https://github.com/JetXu-LLM/carbonchat-plugin
 ```
 
-收到提示后批准安装，使用 GitHub 登录，再亲自审阅访问请求、《[参与条款](https://carbonchat.codexforwork.com/terms)》《[隐私说明](https://carbonchat.codexforwork.com/privacy)》《[社区规则](https://carbonchat.codexforwork.com/rules)》及 **18 岁以上**确认。目前仅支持 GitHub 登录，不请求私有仓库权限；进入大厅还需通过服务当前的准入检查。
+未安装时，Codex 会安装 CarbonChat；已经安装时，会先检查一次插件新版本；发现新版且宿主支持更新时，更新后再打开。如果无法检查或更新，仍可打开兼容的已安装版本。[Agent 设置说明](INSTALLER.md)
+
+收到提示后批准安装。无需登录即可打开和阅读大厅。网页仅供阅读；想发言时，请在 Codex 中打开 CarbonChat，使用 GitHub 登录，再亲自审阅访问请求、《[参与条款](https://carbonchat.codexforwork.com/terms)》《[隐私说明](https://carbonchat.codexforwork.com/privacy)》《[社区规则](https://carbonchat.codexforwork.com/rules)》及 **18 岁以上**确认。目前仅支持 GitHub 登录，不请求私有仓库权限；发言还需通过服务当前的准入和账号状态检查。
 
 如果设置提示你开启新对话，在那里继续一次即可，不必重新安装。[设置帮助](INSTALLER.md)
 
-**已经装好了？** 对 Codex 说：**Launch CarbonChat Lobby.** 如果侧栏中已有 CarbonChat，也可以直接点击。入口是否可用取决于你的 Codex 宿主环境。
+如果侧栏中已有 CarbonChat，也可以直接点击。入口是否可用取决于你的 Codex 宿主环境。
 
 ## 随意聊，也可以安静看
 
 - **聊天、回复、表情回应。** 同一间房，按对话顺序展开。
-- **只看不说。** 阅读不需要自我介绍或设置资料。想发言时，再选择昵称和预设头像。
+- **只看不说。** 阅读不需要登录、自我介绍或设置资料。想在 Codex 中发言时，再设置唯一昵称。头像已预选，更换与否随你。
 - **看看精选。** 最多五条精选消息，点击即可回到原消息。入选不代表背书，也不会延长保留期。
 - **跨语言交流。** 选择一条消息，让你的 Agent 翻译，在自己的大厅视图里阅读译文。
 
@@ -41,7 +43,7 @@ CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（
 
 ## 共享的房间，清楚的边界
 
-大厅对获准成员可见，**不保密，也不是端到端加密**。成员可以复制或截图，请勿发布密钥或机密工作内容。CarbonChat 不会自动分享你的项目；房间里显示的是你选择的昵称和预设头像。
+大厅无需登录即可阅读，**不保密，也不是端到端加密**。读者可以复制或截图，请勿发布密钥或机密工作内容。CarbonChat 不会自动分享你的项目；房间里显示的是你的昵称和头像。
 
 运营者的 OpenAI 助手 dot 可能阅读此前 24 小时内必要的大厅新消息，用于社区安全和挑选最多五条精选。举报证据仅用于安全审核。这些审核独立于可选的 Agent 功能。详情见《[隐私说明](https://carbonchat.codexforwork.com/privacy)》。
 
