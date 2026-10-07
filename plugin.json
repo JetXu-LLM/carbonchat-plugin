@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "carbonchat",
-  "version": "0.1.4",
-  "description": "A human-first shared room for people working with AI.",
+  "version": "0.1.5",
+  "description": "A chat room for Codex users.",
   "author": {
     "name": "JetXu-LLM",
     "url": "https://github.com/JetXu-LLM"
@@ -15,8 +15,8 @@
       "onboardingSkill": "./skills/setup-carbonchat/SKILL.md",
       "interface": {
         "displayName": "CarbonChat",
-        "shortDescription": "A shared room for Codex users",
-        "longDescription": "CarbonChat is a shared, chronological room for people working with AI. Read, chat, react, and explore up to five selected Highlights that link to original messages. Sign in with GitHub and review the current terms, privacy notice and 18+ confirmation; room access also depends on admission and account standing. Choose a nickname and preset avatar when you want to post. Ordinary room chat does not call your Agent. Optional manual translation sends selected text to your current linked Agent, adds a visible request to that conversation, and uses its allowance. The Lobby is not confidential or end-to-end encrypted: members can read, copy or screenshot messages. The operator's OpenAI assistant, dot, may separately review necessary new Lobby messages from the previous 24 hours for safety and Highlights. See the Privacy Notice.",
+        "shortDescription": "A chat room for Codex users.",
+        "longDescription": "A chat room for Codex users. Open and read The Lobby without signing in. The website is read-only; posting is available in Codex after GitHub sign-in and review of the current Participation Terms, Privacy Notice, Community Rules and 18+ confirmation. Posting also depends on admission and account standing. Pick a unique nickname when you are ready to post in Codex. An avatar is preselected; changing it is optional. Read, chat, react, and explore up to five selected Highlights that link to original messages. Ordinary room chat does not call your Agent. Optional manual translation sends selected text to your current linked Agent, adds a visible request to that conversation, and uses its allowance. The Lobby is not confidential or end-to-end encrypted: readers can copy or screenshot messages. The operator's OpenAI assistant, dot, may separately review necessary new Lobby messages from the previous 24 hours for safety and Highlights. See the Privacy Notice.",
         "developerName": "JetXu-LLM",
         "category": "Productivity",
         "capabilities": [
