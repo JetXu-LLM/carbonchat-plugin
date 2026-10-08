@@ -2,6 +2,8 @@
 
 Use these steps for a request to open CarbonChat Lobby, whether or not it is already installed. Keep the user's reply to the next action they need to take.
 
+Use the loaded CarbonChat opener as the opening route. Reuse known installation state and the one bounded update check; do not detour through repository files, command help or technical diagnostics when the supported actions are already known. Keep those checks quiet unless the user must act or an update is about to start. An opener response alone is not visual confirmation.
+
 ## One request, one decision sequence
 
 The same reader prompt works for new and existing users:
@@ -37,17 +39,17 @@ Use only commands the current host supports. The CLI commands below are for a ve
 
    English:
 
-   > CarbonChat is installed. [Continue setup in a new chat](codex://new?prompt=%5B%40CarbonChat%5D%28plugin%3A%2F%2Fcarbonchat%40carbonchat-community%29%20Continue%20CarbonChat%20setup.%20It%20is%20already%20installed%3B%20open%20The%20Lobby.), then press Send.
+   > CarbonChat is installed, but I can’t open The Lobby from this chat. [Continue setup in a new chat](codex://new?prompt=%5B%40CarbonChat%5D%28plugin%3A%2F%2Fcarbonchat%40carbonchat-community%29%20Continue%20CarbonChat%20setup.%20It%20is%20already%20installed%3B%20open%20The%20Lobby.), then press Send.
 
    简体中文：
 
-   > CarbonChat 已安装。[在新对话中继续设置](codex://new?prompt=%5B%40CarbonChat%5D%28plugin%3A%2F%2Fcarbonchat%40carbonchat-community%29%20%E7%BB%A7%E7%BB%AD%E5%AE%8C%E6%88%90%20CarbonChat%20%E8%AE%BE%E7%BD%AE%EF%BC%9A%E6%8F%92%E4%BB%B6%E5%B7%B2%E5%AE%89%E8%A3%85%EF%BC%8C%E8%AF%B7%E6%89%93%E5%BC%80%E5%A4%A7%E5%8E%85%E3%80%82)，然后点击发送。
+   > CarbonChat 已安装，但我无法在当前对话中打开大厅。[在新对话中继续设置](codex://new?prompt=%5B%40CarbonChat%5D%28plugin%3A%2F%2Fcarbonchat%40carbonchat-community%29%20%E7%BB%A7%E7%BB%AD%E5%AE%8C%E6%88%90%20CarbonChat%20%E8%AE%BE%E7%BD%AE%EF%BC%9A%E6%8F%92%E4%BB%B6%E5%B7%B2%E5%AE%89%E8%A3%85%EF%BC%8C%E8%AF%B7%E6%89%93%E5%BC%80%E5%A4%A7%E5%8E%85%E3%80%82)，然后点击发送。
 
    If the client does not open `codex://` links, the equivalent action is to start one new Codex chat, select the installed CarbonChat plugin with `@`, and send “Continue CarbonChat setup. It is already installed; open The Lobby.” (简体中文：“继续完成 CarbonChat 设置：插件已安装，请打开大厅。”). If neither the opener nor an authorized, observed UI entry is available in that new chat, stop and name that host connection blocker once. Do not reinstall, offer another new chat, or search for an unspecified refresh command. A missing tool does not establish that the account was denied admission.
 
 4. **Pause at the user's choices.** When required, use only the host's normal sign-in and connection flow. The user completes GitHub sign-in, reviews CarbonChat access, and makes any policy, age or profile choices. Report a denied or pending access result only when the service actually returns it. Reading does not require a profile. Setup does not post, react, prepare a message draft or transfer room messages into the Agent chat; later publication requires review of the exact text and separate confirmation.
 
-5. **Confirm the observed result briefly.** A visible room supports “The Lobby is open.” An opener result alone supports only that the open request was made. If the user must act, state that step instead of listing internal states or historical restrictions.
+5. **Confirm the observed result briefly.** A visible room supports “The Lobby is open.” An opener result alone supports: “I’ve asked Codex to open The Lobby. Check for the panel; you can read without signing in.” / “我已请求 Codex 打开大厅，请查看面板。无需登录即可阅读。” Do not append model recommendations. If the user must act, state that step instead of listing internal states or historical restrictions.
 
 For later visits, the user can click the CarbonChat sidebar entry when it is visible. The Global entry opens outside a coding conversation; the Thread/Community entry opens in that conversation's side panel. Neither is a reason to change or steer a running task.
 

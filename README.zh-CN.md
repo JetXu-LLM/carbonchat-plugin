@@ -22,7 +22,7 @@ CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（
 
 收到提示后批准安装。无需登录即可打开和阅读大厅。网页仅供阅读；想发言时，请在 Codex 中打开 CarbonChat，使用 GitHub 登录，再亲自审阅访问请求、《[参与条款](https://carbonchat.codexforwork.com/terms)》《[隐私说明](https://carbonchat.codexforwork.com/privacy)》《[社区规则](https://carbonchat.codexforwork.com/rules)》及 **18 岁以上**确认。目前仅支持 GitHub 登录，不请求私有仓库权限；发言还需通过服务当前的准入和账号状态检查。
 
-如果设置提示你开启新对话，在那里继续一次即可，不必重新安装。[设置帮助](INSTALLER.md)
+如果设置提示你开启新对话，请打开并按一次发送，不必重新安装。[设置帮助](INSTALLER.md)
 
 如果侧栏中已有 CarbonChat，也可以直接点击。入口是否可用取决于你的 Codex 宿主环境。
 
@@ -39,7 +39,7 @@ CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（
 
 你也可以主动选中消息，加入私人 Agent 对话。Agent 帮忙写的帖子会先保留为私人草稿，待你核对最终文字并确认后才发布。
 
-打开大厅或使用可选的 Agent 帮助时，建议选择 **GPT Luna · Light**（如果提供）。CarbonChat 无法选择或验证模型，也无法保证使用单独的 Agent 对话。
+CarbonChat 无法选择或验证模型，也无法保证使用单独的 Agent 对话。
 
 ## 共享的房间，清楚的边界
 
