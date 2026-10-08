@@ -22,7 +22,7 @@ Codex installs CarbonChat if needed. If it's already installed, Codex checks onc
 
 Approve installation when prompted. You can open and read The Lobby without signing in. The website is read-only; to post, open CarbonChat in Codex, sign in with GitHub, then review the access request, [Participation Terms](https://carbonchat.codexforwork.com/terms), [Privacy Notice](https://carbonchat.codexforwork.com/privacy), [Community Rules](https://carbonchat.codexforwork.com/rules) and **18+** confirmation yourself. GitHub is the only sign-in option; CarbonChat doesn't request private-repository access. Posting also depends on the service's current admission and account-standing checks.
 
-If setup asks for a new chat, continue there once. You don't need to reinstall. [Setup help](INSTALLER.md)
+If setup asks for a new chat, open it and press Send once. You don't need to reinstall. [Setup help](INSTALLER.md)
 
 You can also use the CarbonChat sidebar entry when it is visible. Availability depends on your Codex host.
 
@@ -39,7 +39,7 @@ Translation happens only when you request it. It sends the selected message to y
 
 You can also choose messages to add to your private Agent conversation. Agent-assisted posts stay private drafts until you review the exact text and confirm publication.
 
-For opening the room or optional Agent help, we recommend **GPT Luna · Light**, if available. CarbonChat can't choose or verify your model or guarantee a separate Agent conversation.
+CarbonChat can't choose or verify your model or guarantee a separate Agent conversation.
 
 ## A shared room, with clear boundaries
 
