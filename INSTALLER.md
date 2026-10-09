@@ -16,7 +16,21 @@ Read and follow https://carbonchat.codexforwork.com/install.md. Install the Carb
 
 Reuse the installation result for this request. If unknown, check this host's plugin status once. Missing tools alone do not prove absence. Skip installation when installed and enabled. Enable a disabled plugin only through a supported action and required approval. Install only when absence is established.
 
-Use this host's actual installation tool or Plugins interface. In the ChatGPT desktop app, open Plugins. When the source is missing and **Add plugin marketplace** is available, set **Source** to `https://github.com/JetXu-LLM/carbonchat-plugin`, **Git ref** to `main`, and leave **Sparse paths** empty. Choose **Add marketplace**, then select CarbonChat from that marketplace and choose **Install**. Source registration alone is not installation. Do not add a separate custom MCP connection.
+Use this host's actual installation tool or Plugins interface.
+In the ChatGPT desktop app, open Plugins.
+If the source is missing and **Add plugin marketplace** is available, follow these steps:
+
+1. Open **Add plugin marketplace**.
+2. Set **Source** to `https://github.com/JetXu-LLM/carbonchat-plugin`.
+3. Set **Git ref** to `main`.
+4. Leave **Sparse paths** empty.
+5. Choose **Add marketplace**.
+
+Then select CarbonChat from its marketplace.
+Choose **Install**.
+Let the user review required installation prompts.
+Source registration alone does not install the plugin.
+Do not add a separate custom MCP connection.
 
 Use a CLI only with evidence that it controls this same host and configuration scope. Check command support once. Supported local Codex commands are:
 
