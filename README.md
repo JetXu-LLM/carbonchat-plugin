@@ -15,7 +15,7 @@ CarbonChat adds **The Lobby**, a shared room for people working with AI, to your
 New or already installed? Copy this request into Codex. The code block has a copy button:
 
 ```text
-Read and follow https://carbonchat.codexforwork.com/install.md. Install the CarbonChat plugin if needed, then open its Lobby MCP App inside this Codex host, not a browser page. Do not post for me.
+Install CarbonChat if needed and open The Lobby inside this Codex host. Follow https://carbonchat.codexforwork.com/install.md; prefer the host's native Install and Run setup flow.
 ```
 
 The [installation steps](https://carbonchat.codexforwork.com/install.md) use your current host's supported plugin tools or Plugins interface. An installed plugin is reused. A browser Lobby or an installation in another environment does not complete this task. If this host cannot install or load the plugin, Codex must report the blocker and one supported next step. [Agent setup instructions](INSTALLER.md)
