@@ -2,6 +2,20 @@
 
 Dated observations for maintenance. These records are not extra installation steps or current admission decisions.
 
+## October 10 opening continuation correction (0.1.11)
+
+A working opener and a bundled setup skill now skip external instruction retrieval.
+The copied outer task explicitly makes setup retrieval conditional and direct as
+text, without web search or a browser tab, before any external file is fetched.
+Otherwise use one HTTP text read and one raw source fallback; do not search or
+open a browser/homepage to retrieve setup instructions. The copied task leads
+with opening the Lobby MCP App in the current chat. Existing installation and
+loading results survive continuations. Updating is needed only on an explicit
+request or verified package incompatibility. Package metadata, MCP connection,
+scopes and onboarding declaration are preserved. The corresponding private
+runtime adds bounded checks of already-saved connection state after authorization;
+this package does not prove real host OAuth, one-round installation or rendering.
+
 ## October 10 installer correction (0.1.10)
 
 The owner’s screenshot shows 0.1.9 stopping before installation when native tools and authorized UI access were unavailable. Version **0.1.10** removes that native-only dead end. Both skills use one INSTALLER.md procedure: a loaded opener opens directly; otherwise status distinguishes source, plugin, enabled state and conversation loading. A permitted CLI needs linked execution-host, user and configuration-root evidence. UI-only denial does not prohibit that separately permitted route; installation denial still stops it. Empty CLI arrays alone do not establish source absence. Any install route and already-installed missing tools share one loading continuation. No OAuth runtime, connection identity, scopes or global installations change. Real fresh-user native installation/rendering remains unverified on the engineering Mac because authorized UI access is unavailable.
