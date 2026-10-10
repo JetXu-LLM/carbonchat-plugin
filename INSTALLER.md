@@ -8,11 +8,11 @@ ChatGPT desktop app. A browser page does not complete that goal.
 Copyable request:
 
 ```text
-Follow https://carbonchat.codexforwork.com/install.md to install CarbonChat if needed and open its Lobby MCP App in this Codex chat.
+Open the CarbonChat Lobby MCP App in this chat. Install if needed: https://carbonchat.codexforwork.com/install.md.
 ```
 
 ```text
-遵循 https://carbonchat.codexforwork.com/install.md，如有需要安装 CarbonChat，并在当前 Codex 聊天中打开它的大厅 MCP App。
+在当前聊天中打开 CarbonChat 大厅 MCP App。如需安装：https://carbonchat.codexforwork.com/install.md。
 ```
 
 ## Source
@@ -22,10 +22,14 @@ Follow https://carbonchat.codexforwork.com/install.md to install CarbonChat if n
 - Plugin: `carbonchat@carbonchat-community`
 - MCP server: https://carbonchat.codexforwork.com/mcp
 
-This is a plugin source, not an official directory listing. If the web reader
-cannot fetch this page, read the same procedure at
+This is a plugin source, not an official directory listing. If the opener or
+bundled setup skill is already available, use it directly.
+Otherwise retrieve this text once with an available HTTP text reader. If that
+reader cannot retrieve it, use the raw source once:
 https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/main/INSTALLER.md.
-Do not create a second custom MCP connection.
+Do not search the web or open browser tabs to retrieve setup instructions.
+An existing bundled procedure needs no second retrieval. Do not create a second
+custom MCP connection.
 
 ## 1. Use available capabilities
 
@@ -147,6 +151,8 @@ open in Codex.” A successful tool result confirms the open request; if visual
 inspection is unavailable, say visibility is unverified. Reply briefly with the
 result or the last verified state and one real next action.
 
-The browser can read instructions and show required sign-in pages.
+Open a browser only for the host’s required sign-in flow or an explicit user
+request for the website. Installation and MCP opening do not require the
+homepage, a browser preview, or a separate website tab.
 https://carbonchat.codexforwork.com/lobby is an explicitly chosen read-only
 fallback, never plugin installation or MCP App completion.
