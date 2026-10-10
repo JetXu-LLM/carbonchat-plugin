@@ -2,6 +2,10 @@
 
 Dated observations for maintenance. These records are not extra installation steps or current admission decisions.
 
+## October 10 installer correction (0.1.10)
+
+The owner’s screenshot shows 0.1.9 stopping before installation when native tools and authorized UI access were unavailable. Version **0.1.10** removes that native-only dead end. Both skills use one INSTALLER.md procedure: a loaded opener opens directly; otherwise status distinguishes source, plugin, enabled state and conversation loading. A permitted CLI needs linked execution-host, user and configuration-root evidence. UI-only denial does not prohibit that separately permitted route; installation denial still stops it. Empty CLI arrays alone do not establish source absence. Any install route and already-installed missing tools share one loading continuation. No OAuth runtime, connection identity, scopes or global installations change. Real fresh-user native installation/rendering remains unverified on the engineering Mac because authorized UI access is unavailable.
+
 ## October 10 follow-up: visible sign-in intent and native setup (0.1.9)
 
 The owner's new screenshots show the same sign-in loop on a Mac using ChatGPT account login. They do not establish an API-key-specific cause. The owner rejected manual MCP settings as the normal onboarding path. Version **0.1.9** guides explicit sign-in through the protected `carbonchat_sign_in` tool in the normal host conversation. The server-delivered Lobby can send one visible user request after a direct app call returns a challenge; it discloses use of the linked model's allowance and never automatically repeats uncertain delivery. A successful message receipt is not proof that GitHub opened or host credentials were saved. Actual fresh-user OAuth completion remains unverified; the engineering Mac's computer-use policy denies access to the Codex app.
