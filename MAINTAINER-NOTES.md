@@ -5,6 +5,8 @@ Dated observations for maintenance. These records are not extra installation ste
 ## October 10 opening continuation correction (0.1.11)
 
 A working opener and a bundled setup skill now skip external instruction retrieval.
+The copied outer task explicitly makes setup retrieval conditional and direct as
+text, without web search or a browser tab, before any external file is fetched.
 Otherwise use one HTTP text read and one raw source fallback; do not search or
 open a browser/homepage to retrieve setup instructions. The copied task leads
 with opening the Lobby MCP App in the current chat. Existing installation and

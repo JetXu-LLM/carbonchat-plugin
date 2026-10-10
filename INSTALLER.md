@@ -8,11 +8,11 @@ ChatGPT desktop app. A browser page does not complete that goal.
 Copyable request:
 
 ```text
-Open the CarbonChat Lobby MCP App in this chat. Install if needed: https://carbonchat.codexforwork.com/install.md.
+Open the CarbonChat Lobby MCP App in this chat; install if needed. Only if setup instructions are needed, read https://carbonchat.codexforwork.com/install.md directly as text without web search or a browser tab.
 ```
 
 ```text
-在当前聊天中打开 CarbonChat 大厅 MCP App。如需安装：https://carbonchat.codexforwork.com/install.md。
+在当前聊天中打开 CarbonChat 大厅 MCP App，必要时安装。仅在需要设置说明时，直接以文本读取 https://carbonchat.codexforwork.com/install.md，不要网页搜索或打开浏览器标签。
 ```
 
 ## Source
