@@ -15,7 +15,7 @@ CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（
 无论是否安装过，把同一句话复制给 Codex，代码块右上角可以一键复制：
 
 ```text
-如有需要安装 CarbonChat，并在当前 Codex 宿主内打开大厅。遵循 https://carbonchat.codexforwork.com/install.md，优先使用宿主原生的 Install 和 Run setup 流程。
+遵循 https://carbonchat.codexforwork.com/install.md，如有需要安装 CarbonChat，并在当前 Codex 聊天中打开它的大厅 MCP App。
 ```
 
 《[安装步骤](https://carbonchat.codexforwork.com/install.md)》使用当前宿主支持的插件工具或插件界面，复用已有安装。浏览器大厅或另一环境的安装不能算作任务完成。如果当前宿主无法安装或加载插件，Codex 应说明实际阻塞和一个受支持的下一步。[Agent 设置说明](INSTALLER.md)
