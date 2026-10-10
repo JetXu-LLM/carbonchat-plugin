@@ -2,6 +2,12 @@
 
 Dated observations for maintenance. These records are not extra installation steps or current admission decisions.
 
+## October 10 follow-up: visible sign-in intent and native setup (0.1.9)
+
+The owner's new screenshots show the same sign-in loop on a Mac using ChatGPT account login. They do not establish an API-key-specific cause. The owner rejected manual MCP settings as the normal onboarding path. Version **0.1.9** guides explicit sign-in through the protected `carbonchat_sign_in` tool in the normal host conversation. The server-delivered Lobby can send one visible user request after a direct app call returns a challenge; it discloses use of the linked model's allowance and never automatically repeats uncertain delivery. A successful message receipt is not proof that GitHub opened or host credentials were saved. Actual fresh-user OAuth completion remains unverified; the engineering Mac's computer-use policy denies access to the Codex app.
+
+Current [official onboarding guidance](https://developers.openai.com/plugins/build/plugins#add-an-onboarding-skill) supports native Install → Run setup in the existing conversation. [Codex's native plugin-install change](https://github.com/openai/codex/pull/42593) reloads thread configuration and invalidates the MCP runtime. This supersedes the categorical new-chat wording in the older observations below. The existing `onboardingSkill` declaration is retained. An external CLI install does not prove that the running desktop refreshed. Prefer native installation, reuse setup/discovery results, and report unavailable host capabilities honestly; no universal one-prompt guarantee is made. The public prompt removes “Do not post for me.” while retaining the explicit publication boundaries in the skills. `mcp.json`, connection identity, OAuth scopes and marketplace policy stay unchanged.
+
 ## October 10: native connection diagnosis (0.1.8)
 
 A Mac running ChatGPT 26.1007.21159 / bundled Codex CLI 0.162.0-alpha.17.2 returned the production service's authentication challenge from a direct native `mcpServer/tool/call`. That call did not emit the `item/completed` event used by the inspected desktop reauthentication listener. An explicit `mcpServer/oauth/login` request generated CarbonChat's authorization URL with PKCE S256, the existing `room:read room:write` scopes, and the Codex client metadata URL. The probe did not open a browser, complete GitHub authorization or exchange a token. It did not test the reported third-party API-key model environment.
