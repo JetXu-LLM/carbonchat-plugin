@@ -12,79 +12,114 @@ for (const name of Object.keys(skills)) {
     new URL(`../skills/${name}/SKILL.md`, import.meta.url),
     "utf8",
   );
-  test(`${name}: distributed operations match the shared source`, () => {
+  const text = distributed.replace(/\s+/g, " ");
+  test(`${name}: the short distributed block matches the single source`, () => {
     assert.equal(distributed, buildSkill(protocol, name));
-  });
-  test(`${name}: installed plain-open and @ continuation are self-contained`, () => {
-    assert.match(distributed, /`open_carbonchat_thread` with `\{\}`/);
-    assert.match(distributed, /Global tool is `open_carbonchat` with\n`\{\}`/);
-    assert.match(
-      distributed,
-      /Do not\nread a second file before discovery or opening/,
-    );
-    assert.match(
-      distributed,
-      /do not\nreinstall, repeat update work or offer another new chat/,
-    );
-    assert.match(
-      distributed,
-      /even\nwhen `@CarbonChat` is selected and no opener is exposed/,
+    assert.ok(
+      distributed.split("\n").length < 65,
+      "Do not reinject the full installation manual",
     );
   });
-  test(`${name}: discovery precedes a missing-tool claim or chat handoff`, () => {
-    assert.match(distributed, /initial tool inventory may omit deferred tools/);
+  test(`${name}: call first, discover second, inspect startup only after discovery`, () => {
+    const call = text.indexOf("invoke `open_carbonchat_thread` with `{}` now");
+    const discovery = text.indexOf(
+      "current-conversation tool search/discovery once",
+    );
+    const returnedCall = text.indexOf("Call the returned opener with `{}`");
+    const startup = text.indexOf("scoped read-only MCP startup/status check");
+    const installation = text.indexOf(
+      name === "setup-carbonchat"
+        ? "Only if installation is confirmed missing"
+        : "Only confirmed missing installation",
+    );
+    assert.ok(
+      call >= 0 &&
+        call < discovery &&
+        discovery < returnedCall &&
+        returnedCall < startup,
+    );
+    assert.ok(
+      installation >= 0 && startup < installation,
+      "Missing installation belongs after the opening path",
+    );
+    assert.match(text, /do no installation or update checks first/);
+    assert.match(text, /Only after discovery returns no callable opener/);
+    assert.match(text, /A found but not yet selected tool is not missing/);
+    assert.match(text, /actual host namespace/);
+  });
+  test(`${name}: installed and @ continuation cannot restart setup or chat`, () => {
+    assert.match(text, /For an already-installed open, `@CarbonChat`/);
     assert.match(
-      distributed,
-      /CarbonChat open_carbonchat_thread open_carbonchat/,
+      text,
+      /No installation, update check, setup browser workflow or another new-chat suggestion/,
     );
     assert.match(
-      distributed,
-      /found but not yet selected\ntool is not missing/,
+      text,
+      /an already continued request never offers another chat/,
     );
     assert.match(
-      distributed,
-      /actually exposed, scoped read-only MCP startup\/status check/,
+      text,
+      /Only an explicit host requirement permits an initial-install handoff/,
     );
+    assert.match(text, /initial inventory may omit deferred tools/);
+    assert.match(text, /Missing tools do not prove a missing plugin/);
     assert.match(
-      distributed,
-      /Only if the host explicitly says a new chat is required/,
-    );
-    assert.match(
-      distributed,
-      /Tool absence alone does not justify this action/,
-    );
-    assert.doesNotMatch(
-      distributed,
-      /If the known installed\/enabled plugin still has no opener/,
+      text,
+      /actual startup error, discovery error, or absent discovery capability/,
     );
   });
-  test(`${name}: first-install, startup-error and denial boundaries survive generation`, () => {
-    assert.match(distributed, /Only if installation is confirmed missing/);
-    assert.match(distributed, /Source registration alone is not installation/);
-    assert.match(distributed, /observed startup error as a startup error/);
+  test(`${name}: normal authorization, denial and visible-result boundaries survive`, () => {
+    assert.match(text, /Guest reading needs no GitHub sign-in/);
     assert.match(
-      distributed,
-      /missing discovery capability as a capability boundary/,
+      text,
+      /invoke protected `carbonchat_sign_in`, preserving any supplied `requestId`/,
     );
     assert.match(
-      distributed,
-      /private RPC, tool namespace or permanent host limitation/,
+      text,
+      /Stop on cancellation, refusal, failure or uncertain delivery/,
     );
-    assert.match(distributed, /Respect an actual access denial/);
-    assert.match(distributed, /Guest reading needs no GitHub sign-in/);
+    assert.match(text, /An actual access denial stops that operation/);
+    assert.match(text, /do not switch routes to bypass it/);
+    assert.match(text, /Never handle passwords, MFA, tokens or callbacks/);
     assert.match(
-      distributed,
+      text,
       /Opening authorizes no post, reaction, draft, publication/,
     );
-    assert.match(distributed, /Only visible MCP App evidence supports/);
+    assert.match(
+      text,
+      /only supported visual MCP App evidence proves The Lobby is open/,
+    );
   });
 }
 
-test("generation fails closed if a required operational section disappears", () => {
+test("open skill has no installation/configuration/update checklist or file dependency", () => {
+  const skill = buildSkill(protocol, "open-carbonchat-community");
+  assert.doesNotMatch(
+    skill,
+    /CODEX_HOME|plugin add|plugin list|marketplace|CLI|Git ref|read-only status check|Update before opening|INSTALLER\.md/,
+  );
+});
+
+test("setup reads installation details only for established absence and preserves permission gates", () => {
+  const skill = buildSkill(protocol, "setup-carbonchat").replace(/\s+/g, " ");
+  assert.match(
+    skill,
+    /Only if installation is confirmed missing and requested, read the installation section/,
+  );
+  assert.match(
+    skill,
+    /required approvals; an installation\/security denial stops that operation/,
+  );
+  assert.match(protocol, /An explicit installation\/security denial/);
+  assert.match(protocol, /after verifying its target/);
+  assert.match(protocol, /Do not install on the assumption that a failed or/);
+});
+
+test("generation fails closed when its shared operating block is removed", () => {
   assert.throws(
     () =>
       buildSkill(
-        protocol.replace("## 3. Load this conversation", "## Loading"),
+        protocol.replace("## Open in this conversation", "## Other"),
         "setup-carbonchat",
       ),
     /Missing installer section/,

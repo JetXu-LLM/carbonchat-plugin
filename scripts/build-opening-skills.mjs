@@ -28,28 +28,21 @@ function section(protocol, heading) {
 export function buildSkill(protocol, name) {
   const skill = skills[name];
   if (!skill) throw new Error("Unknown opening skill: " + name);
-  const operations = [
-    "## 1. Use available capabilities",
-    "## 2. Install only what is missing",
-    "## 3. Load this conversation",
-    "## Update before opening",
-    "## 4. Open and verify",
-  ]
-    .map((heading) => section(protocol, heading))
-    .join("\n\n");
+  const operations = section(protocol, "## Open in this conversation");
+  const installation =
+    name === "setup-carbonchat"
+      ? "Only if installation is confirmed missing and requested, read the installation\n" +
+        "section of [INSTALLER.md](../../INSTALLER.md), or its public text at\n" +
+        "https://carbonchat.codexforwork.com/install.md if the local file is unavailable.\n" +
+        "Use its scoped supported route and required approvals; an installation/security\n" +
+        "denial stops that operation. Return to the opening procedure after installation.\n"
+      : "Only confirmed missing installation belongs to `setup-carbonchat`; preserve\n" +
+        "the same request and established results when handing it setup once.\n";
   return (
     `---\nname: ${name}\ndescription: ${skill.description}\n---\n\n${skill.introduction}\n\n` +
-    "The operational procedure below is complete. Do not\n" +
-    "read a second file before discovery or opening. Follow it once and reuse this\n" +
-    "request’s installation, discovery, update and authentication results.\n\n" +
-    "Plugin: `carbonchat@carbonchat-community`. MCP server: https://carbonchat.codexforwork.com/mcp.\n" +
-    "Source: https://github.com/JetXu-LLM/carbonchat-plugin, Git ref `main`.\n" +
-    "Only if installation is confirmed missing, use step 2 below.\n" +
-    "[INSTALLER.md](../../INSTALLER.md) is an optional reference, not a prerequisite.\n" +
-    "Do not search the web or open a browser tab for instructions, or add a second\n" +
-    "custom MCP connection.\n\n" +
     operations +
-    "\n"
+    "\n\n" +
+    installation
   );
 }
 
