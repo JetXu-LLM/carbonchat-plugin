@@ -2,6 +2,14 @@
 
 Dated observations for maintenance. These records are not extra installation steps or current admission decisions.
 
+## October 10: native connection diagnosis (0.1.8)
+
+A Mac running ChatGPT 26.1007.21159 / bundled Codex CLI 0.162.0-alpha.17.2 returned the production service's authentication challenge from a direct native `mcpServer/tool/call`. That call did not emit the `item/completed` event used by the inspected desktop reauthentication listener. An explicit `mcpServer/oauth/login` request generated CarbonChat's authorization URL with PKCE S256, the existing `room:read room:write` scopes, and the Codex client metadata URL. The probe did not open a browser, complete GitHub authorization or exchange a token. It did not test the reported third-party API-key model environment.
+
+Version **0.1.8** adds one current-host tool-discovery check and the normal **Plugins → MCPs → CarbonChat → Authenticate** recovery when available. A plugin toggle, an OAuth URL, and a visible guest Lobby are different evidence from an authenticated member connection. No second MCP connection, API key or alternate identity path is introduced. The server-delivered Lobby change is released separately from this instruction bundle.
+
+`mcp.json` deliberately stays unchanged. The published [Agent Plugins MCP schema](https://agent-plugins.org/schemas/1.0.0/mcp.schema.json) rejects unknown connection properties; the inspected [Codex connection parser](https://github.com/openai/codex/blob/5ef96ab2785f3ecddf279639eff7b1b42c906fa4/codex-rs/codex-mcp/src/agent_plugin_config.rs) also rejects unknown fields. Adding a newer documentation example's `extensions.com.openai.auth.type: mixed` here without compatible parser evidence would break this package. `ON_USE` selects when authentication is requested; it does not establish automatic OAuth launch from an App button. Official JSON Schema draft 2020-12 validation of plugin.json and unchanged mcp.json passed for 0.1.8. Schema validation and this protocol probe do not replace native UI acceptance.
+
 ## Updating an existing installation
 
 This revision aligns the bundled opening replies with the server: reuse known state, avoid repository detours, give one honest new-chat/Send continuation when the tool is missing, and require visual evidence before saying the Lobby is open. It updates the bundled opening instructions and has package version **0.1.6**. After it is released on `main`, use the [bounded update-before-open flow](INSTALLER.md#update-before-opening) with the client's supported update command and one version verification. A Draft PR is not a published update. If the client still reports the previous version, report that the update did not reach it; do not uninstall/reinstall or repeat upgrades.
@@ -13,7 +21,6 @@ An already cached older skill does not acquire these new instructions merely bec
 Current source reference (October 6, 2026): the official [CLI command definition](https://github.com/openai/codex/blob/73178e7ca60fe8655c49727e60a467d7c03f896c/codex-rs/cli/src/marketplace_cmd.rs) supports a named marketplace upgrade, while [the upgrade implementation](https://github.com/openai/codex/blob/73178e7ca60fe8655c49727e60a467d7c03f896c/codex-rs/core-plugins/src/manager.rs) refreshes installed plugin caches for upgraded marketplace roots. Scope must still be verified on the client; never omit the marketplace name or assume that a similarly named source contains only CarbonChat. This is source evidence, not a live update test.
 
 ## Host contract and dated evidence
-
 
 - [Official plugin guidance](https://learn.chatgpt.com/docs/plugins) directs users to a new chat or CLI session after installation. Do not promise same-chat hot loading. This manifest declares `extensions.com.openai.onboardingSkill` as `./skills/setup-carbonchat/SKILL.md`; the declaration alone does not prove that a custom-marketplace install runs it.
 - [Official new-chat links](https://learn.chatgpt.com/docs/reference/commands#start-a-chat-with-a-plugin) support `codex://new?prompt=` with a plugin mention. The links above use the names in `plugin.json` and `.agents/plugins/marketplace.json`, also confirmed by CLI installed status. They continue an installed plugin, not a direct installer for this GitHub source.
