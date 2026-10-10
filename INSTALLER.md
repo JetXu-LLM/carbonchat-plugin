@@ -38,6 +38,7 @@ Do not delay a working Lobby for installation or version investigation.
 Otherwise reuse known current-host state. If unknown, make one supported
 read-only status check. Distinguish installed, enabled and tool-loaded states.
 Missing tools alone do not establish a missing plugin.
+Source registration alone is not installation.
 
 - Installed and enabled: go to step 3.
 - Installed but disabled: use an exposed supported enable action after any
@@ -96,22 +97,43 @@ uninstall/reinstall, change unrelated configuration or run downloaded scripts.
 
 This step applies after any install route and to an already-installed plugin
 whose tools are missing. Complete an offered native **Run setup** handoff; this
-package declares its onboarding skill. Reuse any prior discovery result, or
-use an actually exposed tool discovery/refresh action once. Native installation
+package declares its onboarding skill. Reuse any prior discovery result; the
+discovery check below runs at most once for this request. Native installation
 may refresh the running desktop; CLI installation alone proves no hot reload.
 Do not inject app-server RPC or launch a separate server to imitate refresh.
 If the host explicitly requires authentication, use step 4's normal connection
 flow before declaring the tools unavailable.
 
-If the known installed/enabled plugin still has no opener or authorized,
-observed CarbonChat UI entry, offer one installed-but-not-loaded continuation:
-start one new Codex chat, select installed CarbonChat with `@`, then send
-**Continue CarbonChat setup. It is already installed; open The Lobby.** /
-**继续完成 CarbonChat 设置：插件已安装，请打开大厅。**
-The user presses Send. Preserve the original open request and established
-installation results. Never send into a running task. The continued chat may
-use its exposed discovery once, but must not reinstall, repeat update work or
-offer another new chat. If tools remain absent, report that loading blocker.
+The initial tool inventory may omit deferred tools. Before concluding that the
+opener is unavailable, use the current conversation's actually exposed tool
+search/discovery action once, with its declared parameters and a query for
+**CarbonChat open_carbonchat_thread open_carbonchat**. Use the returned callable
+tool directly, including its actual host namespace; a found but not yet selected
+tool is not missing. A plugin directory search or a web search is not MCP tool
+discovery. If this request already discovered an opener, reuse it. An explicit
+`@CarbonChat` selection or **Run setup** is the current conversation's activation
+request; finish that request rather than sending it to another skill or chat.
+
+If no callable opener is returned, reuse any observed startup result or make
+one actually exposed, scoped read-only MCP startup/status check. Report an
+observed startup error as a startup error, a discovery failure as a discovery
+failure, and missing discovery capability as a capability boundary. An empty
+initial inventory, installed/enabled status, or successful public `tools/list`
+does not prove whether this conversation loaded the server. Never invent a
+refresh command, private RPC, tool namespace or permanent host limitation.
+
+**Continue CarbonChat setup** / **继续完成 CarbonChat 设置** means this request
+has already reached the continuation. Reuse its installed state; do not
+reinstall, repeat update work or offer another new chat. This rule applies even
+when `@CarbonChat` is selected and no opener is exposed.
+
+Only if the host explicitly says a new chat is required, and this is the initial
+request rather than a continuation, offer one new chat with installed CarbonChat
+selected using `@` and the continuation text above. The user presses Send; never
+send into a running task. Tool absence alone does not justify this action.
+Otherwise report the last verified state and the specific loading/discovery
+blocker. Give one supported next action only when it is actually available;
+do not turn an unknown result into another install, sign-in or new-chat loop.
 
 ## Update before opening
 
@@ -126,7 +148,9 @@ compatible installed opener. Updating does not prove current-chat loading.
 ## 4. Open and verify
 
 Use the actual opener with its declared parameters. The published Thread tool
-is `open_carbonchat_thread` with `{}`. Make one open attempt. If unavailable,
+is `open_carbonchat_thread` with `{}`. The Global tool is `open_carbonchat` with
+`{}`; use it when the Thread tool is unavailable and the Global tool is actually
+callable. Make one open attempt, not both. If neither is callable,
 a real CarbonChat sidebar/global entry permits one normal click only after
 observing it with authorized UI access. A guessed entrypoint or browser URL is
 not an MCP opener. Respect an actual access denial.
