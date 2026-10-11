@@ -12,7 +12,7 @@ export const skills = {
   },
   "setup-carbonchat": {
     description:
-      "Continue an explicitly requested CarbonChat setup after installation, or resume it safely when CarbonChat is already installed.",
+      "Install CarbonChat only when needed and continue opening The Lobby in the same request.",
     introduction:
       "Preserve the user’s install-and-open request. If the request was only to install, ask once whether to open The Lobby. This skill owns the post-install open attempt when native Run setup invokes it.",
   },
@@ -28,16 +28,22 @@ function section(protocol, heading) {
 export function buildSkill(protocol, name) {
   const skill = skills[name];
   if (!skill) throw new Error("Unknown opening skill: " + name);
-  const operations = section(protocol, "## Open in this conversation");
+  const operations = [
+    "## Open first",
+    "## Continue opening",
+    "## Connection and feedback",
+  ]
+    .map((heading) => section(protocol, heading))
+    .join("\n\n");
   const installation =
     name === "setup-carbonchat"
-      ? "Only if installation is confirmed missing and requested, read the installation\n" +
-        "section of [INSTALLER.md](../../INSTALLER.md), or its public text at\n" +
-        "https://carbonchat.codexforwork.com/install.md if the local file is unavailable.\n" +
-        "Use its scoped supported route and required approvals; an installation/security\n" +
-        "denial stops that operation. Return to the opening procedure after installation.\n"
-      : "Only confirmed missing installation belongs to `setup-carbonchat`; preserve\n" +
-        "the same request and established results when handing it setup once.\n";
+      ? "When no opener is callable and installation state needs diagnosis, use\n" +
+        "[INSTALLER.md — Installation state](../../INSTALLER.md#installation-state).\n" +
+        "If that local file is unavailable, read https://carbonchat.codexforwork.com/install.md\n" +
+        "as text; on failure use https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/main/INSTALLER.md once.\n" +
+        "Keep the same request; required approvals and safety denials remain binding.\n"
+      : "If no opener is callable, let `setup-carbonchat` own the same request's\n" +
+        "installation-state diagnosis, including unknown state; pass existing results.\n";
   return (
     `---\nname: ${name}\ndescription: ${skill.description}\n---\n\n${skill.introduction}\n\n` +
     operations +
