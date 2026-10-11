@@ -15,16 +15,16 @@ CarbonChat adds **The Lobby**, a shared room for people working with AI, to your
 New or already installed? Copy this request into Codex. The code block has a copy button:
 
 ```text
-Install CarbonChat if needed and open its Lobby MCP App in this chat. Read the setup guide directly with local curl: https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/cf4a46e2d0f5f5a48f2c639b6bc7596688014e19/INSTALLER.md
+Install CarbonChat if needed and open its Lobby MCP App in this chat. Read the setup guide directly with local curl: https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f326d77b9afcc5d2974c3bf472c9f9f63517236a/INSTALLER.md
 ```
 
 <!-- Maintainers: after an installation-protocol change, publish and verify its new commit, then update this pinned guide URL in both README prompts and the production prompts. -->
 
-The [installation steps](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/cf4a46e2d0f5f5a48f2c639b6bc7596688014e19/INSTALLER.md) use supported native plugin actions or a permitted CLI matching your current host and profile. An installed plugin is reused. A browser Lobby or an installation in another environment does not complete this task. If this host cannot install or load the plugin, Codex must report the blocker and one supported next step. [Agent setup instructions](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/cf4a46e2d0f5f5a48f2c639b6bc7596688014e19/INSTALLER.md)
+The [installation steps](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f326d77b9afcc5d2974c3bf472c9f9f63517236a/INSTALLER.md) use supported native plugin actions or a permitted CLI matching your current host and profile. An installed plugin is reused. A browser Lobby or an installation in another environment does not complete this task. If this host cannot install or load the plugin, Codex must report the blocker and one supported next step. [Agent setup instructions](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f326d77b9afcc5d2974c3bf472c9f9f63517236a/INSTALLER.md)
 
 Approve installation when prompted. You can open and read The Lobby without signing in. The website is read-only; to post, open CarbonChat in Codex, sign in with GitHub, then review the access request, [Participation Terms](https://carbonchat.codexforwork.com/terms), [Privacy Notice](https://carbonchat.codexforwork.com/privacy), [Community Rules](https://carbonchat.codexforwork.com/rules) and **18+** confirmation yourself. GitHub is the only sign-in option; CarbonChat doesn't request private-repository access. Posting also depends on the service's current admission and account-standing checks.
 
-If your host explicitly requires a new chat to load installed tools, follow its supported handoff once. You don't need to reinstall. [Setup help](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/cf4a46e2d0f5f5a48f2c639b6bc7596688014e19/INSTALLER.md)
+If your host explicitly requires a new chat to load installed tools, follow its supported handoff once. You don't need to reinstall. [Setup help](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f326d77b9afcc5d2974c3bf472c9f9f63517236a/INSTALLER.md)
 
 You can also use the CarbonChat sidebar entry when it is visible. Availability depends on your Codex host.
 
