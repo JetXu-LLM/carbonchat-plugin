@@ -15,14 +15,16 @@ CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（
 无论是否安装过，把同一句话复制给 Codex，代码块右上角可以一键复制：
 
 ```text
-在当前聊天打开 CarbonChat 大厅 MCP App，必要时安装。需要设置说明时以文本读取 https://carbonchat.codexforwork.com/install.md；读取失败则读取 https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/main/INSTALLER.md 一次。
+必要时安装 CarbonChat，并在当前聊天打开其大厅 MCP App。用本地 curl 直接读取设置说明：https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/cf4a46e2d0f5f5a48f2c639b6bc7596688014e19/INSTALLER.md
 ```
 
-《[安装步骤](https://carbonchat.codexforwork.com/install.md)》使用原生插件操作，或与当前宿主及配置匹配且获准使用的 CLI，复用已有安装。浏览器大厅或另一环境的安装不能算作任务完成。如果当前宿主无法安装或加载插件，Codex 应说明实际阻塞和一个受支持的下一步。[Agent 设置说明](INSTALLER.md)
+<!-- Maintainers: after an installation-protocol change, publish and verify its new commit, then update this pinned guide URL in both README prompts and the production prompts. -->
+
+《[安装步骤](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/cf4a46e2d0f5f5a48f2c639b6bc7596688014e19/INSTALLER.md)》使用原生插件操作，或与当前宿主及配置匹配且获准使用的 CLI，复用已有安装。浏览器大厅或另一环境的安装不能算作任务完成。如果当前宿主无法安装或加载插件，Codex 应说明实际阻塞和一个受支持的下一步。[Agent 设置说明](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/cf4a46e2d0f5f5a48f2c639b6bc7596688014e19/INSTALLER.md)
 
 收到提示后批准安装。无需登录即可打开和阅读大厅。网页仅供阅读；想发言时，请在 Codex 中打开 CarbonChat，使用 GitHub 登录，再亲自审阅访问请求、《[参与条款](https://carbonchat.codexforwork.com/terms)》《[隐私说明](https://carbonchat.codexforwork.com/privacy)》《[社区规则](https://carbonchat.codexforwork.com/rules)》及 **18 岁以上**确认。目前仅支持 GitHub 登录，不请求私有仓库权限；发言还需通过服务当前的准入和账号状态检查。
 
-只有宿主明确要求新聊天加载已安装工具时，才按照其支持的方式转接一次，不必重新安装。[设置帮助](INSTALLER.md)
+只有宿主明确要求新聊天加载已安装工具时，才按照其支持的方式转接一次，不必重新安装。[设置帮助](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/cf4a46e2d0f5f5a48f2c639b6bc7596688014e19/INSTALLER.md)
 
 如果侧栏中已有 CarbonChat，也可以直接点击。入口是否可用取决于你的 Codex 宿主环境。
 
