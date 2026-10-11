@@ -15,14 +15,14 @@ CarbonChat adds **The Lobby**, a shared room for people working with AI, to your
 New or already installed? Copy this request into Codex. The code block has a copy button:
 
 ```text
-Open the CarbonChat Lobby MCP App in this chat; install if needed. Only if setup instructions are needed, read https://carbonchat.codexforwork.com/install.md directly as text without web search or a browser tab.
+Open the CarbonChat Lobby MCP App in this chat; install if needed. If setup instructions are needed, read https://carbonchat.codexforwork.com/install.md as text; if that fails, read https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/main/INSTALLER.md once.
 ```
 
-The [installation steps](https://carbonchat.codexforwork.com/install.md) use your current host's supported plugin tools or Plugins interface. An installed plugin is reused. A browser Lobby or an installation in another environment does not complete this task. If this host cannot install or load the plugin, Codex must report the blocker and one supported next step. [Agent setup instructions](INSTALLER.md)
+The [installation steps](https://carbonchat.codexforwork.com/install.md) use supported native plugin actions or a permitted CLI matching your current host and profile. An installed plugin is reused. A browser Lobby or an installation in another environment does not complete this task. If this host cannot install or load the plugin, Codex must report the blocker and one supported next step. [Agent setup instructions](INSTALLER.md)
 
 Approve installation when prompted. You can open and read The Lobby without signing in. The website is read-only; to post, open CarbonChat in Codex, sign in with GitHub, then review the access request, [Participation Terms](https://carbonchat.codexforwork.com/terms), [Privacy Notice](https://carbonchat.codexforwork.com/privacy), [Community Rules](https://carbonchat.codexforwork.com/rules) and **18+** confirmation yourself. GitHub is the only sign-in option; CarbonChat doesn't request private-repository access. Posting also depends on the service's current admission and account-standing checks.
 
-Start one new chat only if your host needs it to load the installed tools. Select the installed CarbonChat plugin with `@` and press Send once. You don't need to reinstall. [Setup help](INSTALLER.md)
+If your host explicitly requires a new chat to load installed tools, follow its supported handoff once. You don't need to reinstall. [Setup help](INSTALLER.md)
 
 You can also use the CarbonChat sidebar entry when it is visible. Availability depends on your Codex host.
 
