@@ -7,6 +7,11 @@ Preserve the user’s install-and-open request. If the request was only to insta
 
 ## Open first
 
+First reuse this request's opening result. If a call was accepted or delivery is
+uncertain, no skill or setup continuation calls again. If no call was sent,
+finish this flow; setup receives the same pending open. The explicit connection
+challenge's recovery after confirmed authorization below may resume it once.
+
 Use a callable `open_carbonchat_thread` with `{}`, or `open_carbonchat` with `{}`
 when only the Global opener is callable. Otherwise use an actually exposed
 current-chat tool discovery once, with its declared parameters and the query

@@ -19,6 +19,23 @@ for (const name of Object.keys(skills)) {
   });
   test(`${name}: direct call/discovery precedes unknown-state diagnosis`, () => {
     assert.ok(
+      text.indexOf("First reuse this request's opening result") >= 0 &&
+        text.indexOf("First reuse this request's opening result") <
+          text.indexOf("Use a callable `open_carbonchat_thread` with `{}`"),
+    );
+    assert.match(
+      text,
+      /If a call was accepted or delivery is uncertain, no skill or setup continuation calls again/,
+    );
+    assert.match(
+      text,
+      /If no call was sent, finish this flow; setup receives the same pending open/,
+    );
+    assert.match(
+      text,
+      /explicit connection challenge's recovery after confirmed authorization below may resume it once/,
+    );
+    assert.ok(
       text.indexOf("Use a callable `open_carbonchat_thread` with `{}`") <
         text.indexOf("tool discovery once"),
     );
