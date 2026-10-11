@@ -15,7 +15,7 @@ for (const name of Object.keys(skills)) {
   const text = actual.replace(/\s+/g, " ");
   test(`${name}: actual generated distribution stays short and synchronized`, () => {
     assert.equal(actual, buildSkill(protocol, name));
-    assert.ok(actual.split("\n").length < 70);
+    assert.ok(actual.split("\n").length < 85);
   });
   test(`${name}: direct call/discovery precedes unknown-state diagnosis`, () => {
     assert.ok(
@@ -29,7 +29,7 @@ for (const name of Object.keys(skills)) {
     );
     assert.match(
       text,
-      /If no call was sent, finish this flow; setup receives the same pending open/,
+      /If no opener call was sent, continue this opening flow before setup/,
     );
     assert.match(
       text,
@@ -43,7 +43,7 @@ for (const name of Object.keys(skills)) {
       text.indexOf("tool discovery once") <
         text.indexOf("installation-state procedure"),
     );
-    assert.match(text, /Only when no callable opener is found/);
+    assert.match(text, /Only unknown or confirmed absent installation uses/);
     assert.match(
       text,
       /A failed or uncertain call reports that actual result, not missing installation/,
@@ -51,6 +51,46 @@ for (const name of Object.keys(skills)) {
     assert.match(
       text,
       /if panel visibility is unverified, say so without calling again/,
+    );
+  });
+  test(`${name}: observed catalog lookup cannot complete runtime discovery`, () => {
+    // The reported tool was a public plugin-directory lookup, not callable-tool discovery.
+    assert.match(
+      text,
+      /Discovery must explicitly find callable tools for this chat/,
+    );
+    assert.match(
+      text,
+      /Plugin-directory and web searches, including `plugin_management.search_plugins`, are not runtime tool discovery/,
+    );
+    assert.match(
+      text,
+      /They do not consume the discovery check or prove opener absence/,
+    );
+    assert.match(
+      text,
+      /If no runtime discovery action is exposed, report discovery unavailable/,
+    );
+    assert.match(text, /do not report a completed discovery with no opener/);
+  });
+  test(`${name}: verified installed state survives the observed setup handoff`, () => {
+    // Reproduce the instruction boundary: installed/enabled -> catalog lookup -> setup -> unknown.
+    assert.match(
+      text,
+      /When installation is verified for this host\/profile, stay in opening\/loading diagnosis/,
+    );
+    assert.match(
+      text,
+      /do not send it to setup for installation diagnosis or reread this guide/,
+    );
+    assert.match(text, /a mention alone does not verify installation/);
+    assert.match(
+      text,
+      /public MCP discovery cannot overturn verified installation or prove absence/,
+    );
+    assert.doesNotMatch(
+      text,
+      /If no opener is callable, let `setup-carbonchat` own/,
     );
   });
   test(`${name}: changed-state discovery precedes mandatory setup and startup`, () => {
@@ -112,8 +152,15 @@ test("CLI source registration precedes inventory and both mutations require abse
 });
 test("unknown setup can read diagnosis without proving absence or starting another request", () => {
   const setup = buildSkill(protocol, "setup-carbonchat").replace(/\s+/g, " ");
-  assert.match(setup, /installation state needs diagnosis/);
+  assert.match(
+    setup,
+    /Only when installation is unknown or confirmed absent, use/,
+  );
   assert.match(setup, /Keep the same request/);
+  assert.match(
+    flat,
+    /Reuse a completed status check; do not restart diagnosis after a skill handoff/,
+  );
   assert.doesNotMatch(
     setup,
     /Only if installation is confirmed missing and requested, read/,

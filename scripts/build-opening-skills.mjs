@@ -37,13 +37,13 @@ export function buildSkill(protocol, name) {
     .join("\n\n");
   const installation =
     name === "setup-carbonchat"
-      ? "When no opener is callable and installation state needs diagnosis, use\n" +
+      ? "Only when installation is unknown or confirmed absent, use\n" +
         "[INSTALLER.md — Installation state](../../INSTALLER.md#installation-state).\n" +
         "If that local file is unavailable, read https://carbonchat.codexforwork.com/install.md\n" +
         "as text; on failure use https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/main/INSTALLER.md once.\n" +
         "Keep the same request; required approvals and safety denials remain binding.\n"
-      : "If no opener is callable, let `setup-carbonchat` own the same request's\n" +
-        "installation-state diagnosis, including unknown state; pass existing results.\n";
+      : "Only unknown or confirmed absent installation belongs to `setup-carbonchat`;\n" +
+        "pass verified state and discovery results with the same request.\n";
   return (
     `---\nname: ${name}\ndescription: ${skill.description}\n---\n\n${skill.introduction}\n\n` +
     operations +
