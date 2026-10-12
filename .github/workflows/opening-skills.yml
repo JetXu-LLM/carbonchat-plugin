@@ -1,0 +1,20 @@
+name: Opening instructions
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node scripts/build-opening-skills.mjs --check
+      - run: node --test scripts/opening-skills.test.mjs
+      - run: git diff --check

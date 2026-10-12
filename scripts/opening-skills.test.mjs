@@ -93,7 +93,7 @@ for (const name of Object.keys(skills)) {
       /If no opener is callable, let `setup-carbonchat` own/,
     );
   });
-  test(`${name}: changed-state discovery precedes mandatory setup and startup`, () => {
+  test(`${name}: current-chat opening precedes one first-loading handoff`, () => {
     assert.ok(
       text.indexOf("After installation or enablement changes state, discover") <
         text.indexOf("host explicitly requires **Run setup**"),
@@ -103,12 +103,48 @@ for (const name of Object.keys(skills)) {
         text.indexOf("read an exposed scoped startup status"),
     );
     assert.match(text, /A callable opener skips that handoff/);
-    assert.match(text, /a continuation never offers another new chat/);
-    assert.match(text, /Only an explicit host requirement permits a new chat/);
+    assert.match(
+      text,
+      /installation is verified, no opener call has been sent/,
+    );
+    assert.match(text, /Prefer supported current-chat loading/);
+    assert.match(text, /discovery is unavailable or one successful read-only discovery check returns no opener/);
+    assert.match(
+      text,
+      /one loading handoff to a new chat or session on the same Mac\/profile/,
+    );
+    assert.match(
+      text,
+      /Use an exposed supported handoff when authorized; otherwise tell the user/,
+    );
+    assert.match(text, /already installed/);
+    assert.doesNotMatch(
+      text,
+      /Only an explicit host requirement permits a new chat/,
+    );
+    assert.doesNotMatch(text, /a continuation never offers another new chat/);
     assert.doesNotMatch(
       text,
       /sidebar|normal click|CODEX_HOME|marketplace list|plugin add/,
     );
+  });
+  test(`${name}: loading continuation preserves state without replay or a chat loop`, () => {
+    assert.match(
+      text,
+      /Carry verified installation and the pending first opening/,
+    );
+    assert.match(
+      text,
+      /A continuation resumes that handoff; never offer another one/,
+    );
+    assert.match(text, /Do not repeat accepted or uncertain calls/);
+    assert.match(text, /Stop on errors, denial\/cancellation or pending\/uncertain operations/);
+    assert.match(text, /or reload other work/);
+    assert.match(text, /A handoff is not opener acceptance or a visible Lobby/);
+    const manualHandoff = text.match(/“@CarbonChat[^]*?”/)?.[0];
+    assert.ok(manualHandoff);
+    assert.match(manualHandoff, /already installed\. No opener call has been made\. Open The Lobby here/);
+    assert.match(manualHandoff, /This is the single loading handoff; do not reinstall or move to another chat/);
   });
   test(`${name}: connection and publication boundaries survive generation`, () => {
     assert.match(text, /Guest reading needs no GitHub sign-in/);
