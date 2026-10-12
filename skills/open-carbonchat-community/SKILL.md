@@ -52,14 +52,14 @@ skips that handoff. CLI installation alone does not prove hot reload.
 
 If installed/enabled tools remain unavailable, read an exposed scoped startup
 status and report the actual error or missing capability. Do not reinstall.
-If installation is verified, no opener call has been sent and no current-chat
-reload or discovery action is exposed, make one loading handoff to a new chat
-or session on the same Mac/profile, following the host's documented post-install procedure.
-Use an exposed supported handoff when authorized; otherwise tell the user:
-“Start one new chat on this Mac/profile. Ask @CarbonChat: Already installed; finish the pending first Lobby opening here. This is the one loading handoff; do not reinstall or move again.”
+Prefer supported current-chat loading. If installation is verified, no opener call has been sent,
+and either discovery is unavailable or one successful read-only discovery check returns no opener,
+make one loading handoff to a new chat or session on the same Mac/profile, following the host's documented procedure.
+Use an exposed supported handoff when authorized; otherwise tell the user to start one new chat on this Mac/profile and send:
+“@CarbonChat is already installed. No opener call has been made. Open The Lobby here. This is the single loading handoff; do not reinstall or move to another chat.”
 Carry verified installation and the pending first opening. A handoff is not opener acceptance or a visible Lobby.
 A continuation resumes that handoff; never offer another one.
-Do not repeat accepted or uncertain calls, bypass denial/cancellation, or reload other work.
+Stop on errors, denial/cancellation or pending/uncertain operations. Do not repeat accepted or uncertain calls or reload other work.
 
 ## Connection and feedback
 

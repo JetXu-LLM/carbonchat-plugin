@@ -107,7 +107,8 @@ for (const name of Object.keys(skills)) {
       text,
       /installation is verified, no opener call has been sent/,
     );
-    assert.match(text, /no current-chat reload or discovery action is exposed/);
+    assert.match(text, /Prefer supported current-chat loading/);
+    assert.match(text, /discovery is unavailable or one successful read-only discovery check returns no opener/);
     assert.match(
       text,
       /one loading handoff to a new chat or session on the same Mac\/profile/,
@@ -116,7 +117,7 @@ for (const name of Object.keys(skills)) {
       text,
       /Use an exposed supported handoff when authorized; otherwise tell the user/,
     );
-    assert.match(text, /Already installed/);
+    assert.match(text, /already installed/);
     assert.doesNotMatch(
       text,
       /Only an explicit host requirement permits a new chat/,
@@ -137,12 +138,13 @@ for (const name of Object.keys(skills)) {
       /A continuation resumes that handoff; never offer another one/,
     );
     assert.match(text, /Do not repeat accepted or uncertain calls/);
-    assert.match(text, /bypass denial\/cancellation, or reload other work/);
+    assert.match(text, /Stop on errors, denial\/cancellation or pending\/uncertain operations/);
+    assert.match(text, /or reload other work/);
     assert.match(text, /A handoff is not opener acceptance or a visible Lobby/);
-    const manualHandoff = text.match(/“Start one new chat[^]*?”/)?.[0];
+    const manualHandoff = text.match(/“@CarbonChat[^]*?”/)?.[0];
     assert.ok(manualHandoff);
-    assert.match(manualHandoff, /Already installed; finish the pending first Lobby opening here/);
-    assert.match(manualHandoff, /This is the one loading handoff; do not reinstall or move again/);
+    assert.match(manualHandoff, /already installed\. No opener call has been made\. Open The Lobby here/);
+    assert.match(manualHandoff, /This is the single loading handoff; do not reinstall or move to another chat/);
   });
   test(`${name}: connection and publication boundaries survive generation`, () => {
     assert.match(text, /Guest reading needs no GitHub sign-in/);
