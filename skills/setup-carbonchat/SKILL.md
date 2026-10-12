@@ -69,11 +69,14 @@ For Chinese, reply: “CarbonChat 已安装，但当前聊天还没加载它的�
 ```
 
 Carry verified installation and the pending first opening. The short requests above
-identify the receiving continuation: installed/enabled is verified, no opener has
-been sent, and the loading handoff has been used. Resume opening without another
-installation check. A continuation resumes that handoff; never offer another one.
+carry that state; the phrase alone does not prove the user changed chats or used
+the handoff. Use this chat's actual history to distinguish the original installation
+chat from a receiving chat. In the original chat, the previously offered new-chat
+step remains pending; briefly repeat that same step if tools are still unavailable.
+After an actual handoff, a continuation resumes that handoff; never offer another one.
+Resume opening without another installation check.
 If this continuation still has no callable opener after one real discovery check,
-report the actual capability/startup boundary briefly. Do not ask the user to wait
+report the actual capability/startup boundary briefly, without internal handoff counters. Do not ask the user to wait
 for a fixed duration. A handoff is not opener acceptance or a visible Lobby.
 Keep operation-state details and these guards in agent instructions, not in the
 user's copyable request. Existing evidence of an accepted or uncertain call takes

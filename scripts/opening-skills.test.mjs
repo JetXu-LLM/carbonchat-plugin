@@ -15,7 +15,7 @@ for (const name of Object.keys(skills)) {
   const text = actual.replace(/\s+/g, " ");
   test(`${name}: actual generated distribution stays short and synchronized`, () => {
     assert.equal(actual, buildSkill(protocol, name));
-    assert.ok(actual.split("\n").length < 105);
+    assert.ok(actual.split("\n").length < 115);
   });
   test(`${name}: direct call/discovery precedes unknown-state diagnosis`, () => {
     assert.ok(
@@ -135,7 +135,7 @@ for (const name of Object.keys(skills)) {
     );
     assert.match(
       text,
-      /A continuation resumes that handoff; never offer another one/,
+      /a continuation resumes that handoff; never offer another one/,
     );
     assert.match(text, /Do not repeat accepted or uncertain calls/);
     assert.match(text, /Stop on errors, denial\/cancellation or pending\/uncertain operations/);
@@ -150,7 +150,10 @@ for (const name of Object.keys(skills)) {
       assert.ok(prompt.length < 80);
       assert.doesNotMatch(prompt, /single loading handoff|No opener call|do not reinstall|另一个聊天/);
     }
-    assert.match(text, /short requests above identify the receiving continuation/);
+    assert.match(text, /phrase alone does not prove the user changed chats or used the handoff/);
+    assert.match(text, /actual history to distinguish the original installation chat from a receiving chat/);
+    assert.match(text, /original chat, the previously offered new-chat step remains pending/);
+    assert.match(text, /After an actual handoff, a continuation resumes that handoff; never offer another one/);
     assert.match(text, /Resume opening without another installation check/);
     assert.match(text, /Existing evidence of an accepted or uncertain call takes precedence/);
     assert.match(text, /Do not ask the user to wait for a fixed duration/);
