@@ -15,12 +15,12 @@ CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（
 无论是否安装过，把同一句话复制给 Codex，代码块右上角可以一键复制：
 
 ```text
-必要时安装 CarbonChat，并在当前聊天打开其大厅 MCP App。用本地 curl 直接读取设置说明：https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f06a36bf9751cce912800d9afb2214726316756d/INSTALLER.md
+必要时安装 CarbonChat，并在当前聊天打开其大厅 MCP App。用本地 curl 直接读取设置说明：https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/051f68d6510d9d5c4ab810e7fc82b8f4b2adf35f/INSTALLER.md
 ```
 
 <!-- Maintainers: after an installation-protocol change, publish and verify its new commit, then update this pinned guide URL in both README prompts and the production prompts. -->
 
-Codex 会复用已有安装，并尝试在当前聊天打开大厅。[设置帮助](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f06a36bf9751cce912800d9afb2214726316756d/INSTALLER.md)。
+Codex 会复用已有安装，并尝试在当前聊天打开大厅。[设置帮助](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/051f68d6510d9d5c4ab810e7fc82b8f4b2adf35f/INSTALLER.md)。
 
 收到提示后批准安装。无需登录即可打开和阅读大厅。网页仅供阅读；想发言时，请在 Codex 中打开 CarbonChat，使用 GitHub 登录，再亲自审阅访问请求、《[参与条款](https://carbonchat.codexforwork.com/terms)》《[隐私说明](https://carbonchat.codexforwork.com/privacy)》《[社区规则](https://carbonchat.codexforwork.com/rules)》及 **18 岁以上**确认。目前仅支持 GitHub 登录，不请求私有仓库权限；发言还需通过服务当前的准入和账号状态检查。
 
