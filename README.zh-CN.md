@@ -20,11 +20,15 @@ CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（
 
 <!-- Maintainers: after an installation-protocol change, publish and verify its new commit, then update this pinned guide URL in both README prompts and the production prompts. -->
 
-《[安装步骤](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f06a36bf9751cce912800d9afb2214726316756d/INSTALLER.md)》使用原生插件操作，或与当前宿主及配置匹配且获准使用的 CLI，复用已有安装。浏览器大厅或另一环境的安装不能算作任务完成。如果当前宿主无法安装或加载插件，Codex 应说明实际阻塞和一个受支持的下一步。[Agent 设置说明](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f06a36bf9751cce912800d9afb2214726316756d/INSTALLER.md)
+Codex 会复用已有安装，并尝试在当前聊天打开大厅。[设置帮助](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f06a36bf9751cce912800d9afb2214726316756d/INSTALLER.md)。
 
 收到提示后批准安装。无需登录即可打开和阅读大厅。网页仅供阅读；想发言时，请在 Codex 中打开 CarbonChat，使用 GitHub 登录，再亲自审阅访问请求、《[参与条款](https://carbonchat.codexforwork.com/terms)》《[隐私说明](https://carbonchat.codexforwork.com/privacy)》《[社区规则](https://carbonchat.codexforwork.com/rules)》及 **18 岁以上**确认。目前仅支持 GitHub 登录，不请求私有仓库权限；发言还需通过服务当前的准入和账号状态检查。
 
-已确认安装、尚未发出打开调用，且没有发现能力或一次成功的工具发现仍未找到打开工具时，在同一台 Mac、同一配置下新建一个聊天，请 @CarbonChat 完成待办的首次打开。说明已安装、尚未调用打开工具，且这是唯一一次加载转接。[设置帮助](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f06a36bf9751cce912800d9afb2214726316756d/INSTALLER.md)
+如果 Codex 提示已安装、但当前聊天尚未加载工具，在同一台 Mac 上新建一个聊天，粘贴：
+
+```text
+@CarbonChat 已安装，请在这里继续打开大厅。
+```
 
 如果侧栏中已有 CarbonChat，也可以直接点击。入口是否可用取决于你的 Codex 宿主环境。
 

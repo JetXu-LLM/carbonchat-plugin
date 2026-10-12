@@ -15,7 +15,7 @@ for (const name of Object.keys(skills)) {
   const text = actual.replace(/\s+/g, " ");
   test(`${name}: actual generated distribution stays short and synchronized`, () => {
     assert.equal(actual, buildSkill(protocol, name));
-    assert.ok(actual.split("\n").length < 85);
+    assert.ok(actual.split("\n").length < 105);
   });
   test(`${name}: direct call/discovery precedes unknown-state diagnosis`, () => {
     assert.ok(
@@ -115,7 +115,7 @@ for (const name of Object.keys(skills)) {
     );
     assert.match(
       text,
-      /Use an exposed supported handoff when authorized; otherwise tell the user/,
+      /Use an exposed supported handoff when authorized/,
     );
     assert.match(text, /already installed/);
     assert.doesNotMatch(
@@ -141,10 +141,19 @@ for (const name of Object.keys(skills)) {
     assert.match(text, /Stop on errors, denial\/cancellation or pending\/uncertain operations/);
     assert.match(text, /or reload other work/);
     assert.match(text, /A handoff is not opener acceptance or a visible Lobby/);
-    const manualHandoff = text.match(/“@CarbonChat[^]*?”/)?.[0];
-    assert.ok(manualHandoff);
-    assert.match(manualHandoff, /already installed\. No opener call has been made\. Open The Lobby here/);
-    assert.match(manualHandoff, /This is the single loading handoff; do not reinstall or move to another chat/);
+    const prompts = [...actual.matchAll(/```text\n([^]*?)\n```/g)].map((m) => m[1]);
+    assert.deepEqual(prompts, [
+      "@CarbonChat is already installed. Continue opening The Lobby here.",
+      "@CarbonChat 已安装，请在这里继续打开大厅。",
+    ]);
+    for (const prompt of prompts) {
+      assert.ok(prompt.length < 80);
+      assert.doesNotMatch(prompt, /single loading handoff|No opener call|do not reinstall|另一个聊天/);
+    }
+    assert.match(text, /short requests above identify the receiving continuation/);
+    assert.match(text, /Resume opening without another installation check/);
+    assert.match(text, /Existing evidence of an accepted or uncertain call takes precedence/);
+    assert.match(text, /Do not ask the user to wait for a fixed duration/);
   });
   test(`${name}: connection and publication boundaries survive generation`, () => {
     assert.match(text, /Guest reading needs no GitHub sign-in/);
@@ -225,4 +234,13 @@ test("generation fails closed without the common open/recovery section", () => {
       ),
     /Missing installer section/,
   );
+});
+
+test("native installation is preferred and the display icon avoids full artwork transfer", () => {
+  assert.match(flat, /prefer an actually exposed supported native installation action/);
+  assert.match(flat, /Use the matched CLI sequence below only if no such native action is exposed/);
+  const mark = readFileSync(new URL("../assets/carbonchat-mark.png", import.meta.url));
+  assert.ok(mark.length < 16_000);
+  assert.equal(mark.readUInt32BE(16), 128);
+  assert.equal(mark.readUInt32BE(20), 128);
 });

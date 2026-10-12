@@ -48,8 +48,8 @@ Native status success skips CLI. An error means unknown, not absent.
 - Installed and enabled: go to **Continue opening**.
 - Installed but disabled: use an exposed supported enable action with required
   approval, then **Continue opening**. Do not invent an enable command.
-- Absent: use the selected supported native installation action, or the CLI
-  sequence below. The user's install-if-needed request authorizes only needed
+- Absent: prefer an actually exposed supported native installation action.
+  Use the matched CLI sequence below only if no such native action is exposed. The user's install-if-needed request authorizes only needed
   setup, subject to required approvals. Verify the result, then continue opening.
 - No usable status route or unresolved error: report that specific capability
   boundary and the last verified state.
@@ -95,14 +95,33 @@ complete its supported native handoff and discover once more. A callable opener
 skips that handoff. CLI installation alone does not prove hot reload.
 
 If installed/enabled tools remain unavailable, read an exposed scoped startup
-status and report the actual error or missing capability. Do not reinstall.
+status if available. Report a real error; do not label it a loading delay.
 Prefer supported current-chat loading. If installation is verified, no opener call has been sent,
 and either discovery is unavailable or one successful read-only discovery check returns no opener,
 make one loading handoff to a new chat or session on the same Mac/profile, following the host's documented procedure.
-Use an exposed supported handoff when authorized; otherwise tell the user to start one new chat on this Mac/profile and send:
-“@CarbonChat is already installed. No opener call has been made. Open The Lobby here. This is the single loading handoff; do not reinstall or move to another chat.”
-Carry verified installation and the pending first opening. A handoff is not opener acceptance or a visible Lobby.
-A continuation resumes that handoff; never offer another one.
+Use an exposed supported handoff when authorized. Otherwise reply briefly:
+“CarbonChat is installed, but its tools aren't loaded in this chat yet. Start a new chat on this Mac and paste:”
+
+```text
+@CarbonChat is already installed. Continue opening The Lobby here.
+```
+
+For Chinese, reply: “CarbonChat 已安装，但当前聊天还没加载它的工具。在这台 Mac 上新建一个聊天，粘贴：”
+
+```text
+@CarbonChat 已安装，请在这里继续打开大厅。
+```
+
+Carry verified installation and the pending first opening. The short requests above
+identify the receiving continuation: installed/enabled is verified, no opener has
+been sent, and the loading handoff has been used. Resume opening without another
+installation check. A continuation resumes that handoff; never offer another one.
+If this continuation still has no callable opener after one real discovery check,
+report the actual capability/startup boundary briefly. Do not ask the user to wait
+for a fixed duration. A handoff is not opener acceptance or a visible Lobby.
+Keep operation-state details and these guards in agent instructions, not in the
+user's copyable request. Existing evidence of an accepted or uncertain call takes
+precedence over the continuation wording.
 Stop on errors, denial/cancellation or pending/uncertain operations. Do not repeat accepted or uncertain calls or reload other work.
 
 ## Connection and feedback
