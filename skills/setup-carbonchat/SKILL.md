@@ -56,7 +56,7 @@ If installation is verified, no opener call has been sent and no current-chat
 reload or discovery action is exposed, make one loading handoff to a new chat
 or session on the same Mac/profile, following the host's documented post-install procedure.
 Use an exposed supported handoff when authorized; otherwise tell the user:
-“Start one new chat on this Mac/profile and ask @CarbonChat to open The Lobby; it is already installed.”
+“Start one new chat on this Mac/profile. Ask @CarbonChat: Already installed; finish the pending first Lobby opening here. This is the one loading handoff; do not reinstall or move again.”
 Carry verified installation and the pending first opening. A handoff is not opener acceptance or a visible Lobby.
 A continuation resumes that handoff; never offer another one.
 Do not repeat accepted or uncertain calls, bypass denial/cancellation, or reload other work.

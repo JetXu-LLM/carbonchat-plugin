@@ -116,7 +116,7 @@ for (const name of Object.keys(skills)) {
       text,
       /Use an exposed supported handoff when authorized; otherwise tell the user/,
     );
-    assert.match(text, /already installed/);
+    assert.match(text, /Already installed/);
     assert.doesNotMatch(
       text,
       /Only an explicit host requirement permits a new chat/,
@@ -139,6 +139,10 @@ for (const name of Object.keys(skills)) {
     assert.match(text, /Do not repeat accepted or uncertain calls/);
     assert.match(text, /bypass denial\/cancellation, or reload other work/);
     assert.match(text, /A handoff is not opener acceptance or a visible Lobby/);
+    const manualHandoff = text.match(/“Start one new chat[^]*?”/)?.[0];
+    assert.ok(manualHandoff);
+    assert.match(manualHandoff, /Already installed; finish the pending first Lobby opening here/);
+    assert.match(manualHandoff, /This is the one loading handoff; do not reinstall or move again/);
   });
   test(`${name}: connection and publication boundaries survive generation`, () => {
     assert.match(text, /Guest reading needs no GitHub sign-in/);
