@@ -24,7 +24,7 @@ The [installation steps](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-
 
 Approve installation when prompted. You can open and read The Lobby without signing in. The website is read-only; to post, open CarbonChat in Codex, sign in with GitHub, then review the access request, [Participation Terms](https://carbonchat.codexforwork.com/terms), [Privacy Notice](https://carbonchat.codexforwork.com/privacy), [Community Rules](https://carbonchat.codexforwork.com/rules) and **18+** confirmation yourself. GitHub is the only sign-in option; CarbonChat doesn't request private-repository access. Posting also depends on the service's current admission and account-standing checks.
 
-If your host explicitly requires a new chat to load installed tools, follow its supported handoff once. You don't need to reinstall. [Setup help](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f326d77b9afcc5d2974c3bf472c9f9f63517236a/INSTALLER.md)
+If CarbonChat is installed but no opening call has been sent and this chat cannot load its tools, start one new chat on the same Mac/profile and ask @CarbonChat to open The Lobby. Reuse the installation; this continues the first opening. [Setup help](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f326d77b9afcc5d2974c3bf472c9f9f63517236a/INSTALLER.md)
 
 You can also use the CarbonChat sidebar entry when it is visible. Availability depends on your Codex host.
 

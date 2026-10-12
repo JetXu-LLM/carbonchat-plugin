@@ -24,7 +24,7 @@ CarbonChat 为你的 Codex 工作区带来一间共享聊天室：**The Lobby（
 
 收到提示后批准安装。无需登录即可打开和阅读大厅。网页仅供阅读；想发言时，请在 Codex 中打开 CarbonChat，使用 GitHub 登录，再亲自审阅访问请求、《[参与条款](https://carbonchat.codexforwork.com/terms)》《[隐私说明](https://carbonchat.codexforwork.com/privacy)》《[社区规则](https://carbonchat.codexforwork.com/rules)》及 **18 岁以上**确认。目前仅支持 GitHub 登录，不请求私有仓库权限；发言还需通过服务当前的准入和账号状态检查。
 
-只有宿主明确要求新聊天加载已安装工具时，才按照其支持的方式转接一次，不必重新安装。[设置帮助](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f326d77b9afcc5d2974c3bf472c9f9f63517236a/INSTALLER.md)
+已确认安装、尚未发出打开调用，而当前聊天无法加载工具时，在同一台 Mac、同一配置下新建一个聊天，请 @CarbonChat 打开大厅。复用已有安装，继续这一次首次打开。[设置帮助](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/f326d77b9afcc5d2974c3bf472c9f9f63517236a/INSTALLER.md)
 
 如果侧栏中已有 CarbonChat，也可以直接点击。入口是否可用取决于你的 Codex 宿主环境。
 

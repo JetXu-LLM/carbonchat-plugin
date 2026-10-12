@@ -1,7 +1,7 @@
 # Install CarbonChat and open The Lobby
 
-Keep installation and opening in the user's same request. The goal is the
-Lobby MCP App in this chat. Reuse confirmed results across continuations.
+Keep installation and opening in the user's same request. Prefer the Lobby MCP
+App in this chat. Reuse confirmed results across loading continuations.
 
 ## Open first
 
@@ -96,9 +96,14 @@ skips that handoff. CLI installation alone does not prove hot reload.
 
 If installed/enabled tools remain unavailable, read an exposed scoped startup
 status and report the actual error or missing capability. Do not reinstall.
-Only an explicit host requirement permits a new chat: use its supported native
-handoff, or give one real user action carrying the installed state. Optional
-suggestions are not requirements; a continuation never offers another new chat.
+If installation is verified, no opener call has been sent and no current-chat
+reload or discovery action is exposed, make one loading handoff to a new chat
+or session on the same Mac/profile, following the host's documented post-install procedure.
+Use an exposed supported handoff when authorized; otherwise tell the user:
+“Start one new chat on this Mac/profile and ask @CarbonChat to open The Lobby; it is already installed.”
+Carry verified installation and the pending first opening. A handoff is not opener acceptance or a visible Lobby.
+A continuation resumes that handoff; never offer another one.
+Do not repeat accepted or uncertain calls, bypass denial/cancellation, or reload other work.
 
 ## Connection and feedback
 
