@@ -15,12 +15,12 @@ CarbonChat adds **The Lobby**, a shared room for people working with AI, to your
 New or already installed? Copy this request into Codex. The code block has a copy button:
 
 ```text
-Install CarbonChat if needed and open its Lobby MCP App in this chat. Read the setup guide directly with local curl: https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/051f68d6510d9d5c4ab810e7fc82b8f4b2adf35f/INSTALLER.md
+Install CarbonChat if needed and open its Lobby MCP App in this chat. Read the setup guide directly with local curl: https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/a5ad1a7361e054135870969d1494f5feeaae8d5b/INSTALLER.md
 ```
 
 <!-- Maintainers: after an installation-protocol change, publish and verify its new commit, then update this pinned guide URL in both README prompts and the production prompts. -->
 
-Codex reuses an existing installation and tries to open The Lobby in this chat. [Setup help](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/051f68d6510d9d5c4ab810e7fc82b8f4b2adf35f/INSTALLER.md).
+Codex reuses an existing installation and tries to open The Lobby in this chat. [Setup help](https://raw.githubusercontent.com/JetXu-LLM/carbonchat-plugin/a5ad1a7361e054135870969d1494f5feeaae8d5b/INSTALLER.md).
 
 Approve installation when prompted. You can open and read The Lobby without signing in. The website is read-only; to post, open CarbonChat in Codex, sign in with GitHub, then review the access request, [Participation Terms](https://carbonchat.codexforwork.com/terms), [Privacy Notice](https://carbonchat.codexforwork.com/privacy), [Community Rules](https://carbonchat.codexforwork.com/rules) and **18+** confirmation yourself. GitHub is the only sign-in option; CarbonChat doesn't request private-repository access. Posting also depends on the service's current admission and account-standing checks.
 
